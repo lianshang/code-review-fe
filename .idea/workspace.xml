@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed1783f1-531d-423b-9ffa-5de4f4c706a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhaohaipeng/transbill/list/list.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhaohaipeng/transbill/list/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhaohaipeng/transbill/list/list.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhaohaipeng/region-select/region-select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhaohaipeng/region-select/region-select.less" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ed1783f1-531d-423b-9ffa-5de4f4c706a1" name="Default" comment="" />
     <ignored path="code-review-fe.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
