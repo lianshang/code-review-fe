@@ -1,0 +1,187 @@
+.mod-transbill-list{
+  position: relative;
+  .bread-crumb{
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .waybill-money{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+  }
+  .search{
+    margin-top: 20px;
+    .ui-search-wrap{
+      .date-picker{
+        width: 140px;
+      }
+      .ui-search-input[data-key=waybill_no]{
+        width: 170px;
+      }
+      .ui-search-input[data-key=q]{
+        width: 220px;
+      }
+    }
+  }
+  .export{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+  .tables{
+    margin-top: 35px;
+    a{
+      display: inline-block;
+      margin: 3px 6px;
+      cursor: pointer;
+    }
+    .ui-jpages-wrap{
+      overflow-x: auto;
+    }
+  }
+
+}
+input[type=checkbox]{
+  cursor: pointer;
+}
+.modal-waybill{
+  .modal-content{
+    margin: 0 auto;
+    width: 600px;
+    .modal-header{
+      .modal-waybill-title{
+        .transbill,.waybill{
+          display: inline-block;
+          width: 50%;
+          height: auto;
+          vertical-align: top;
+        }
+        .waybill{
+          text-align: right;
+        }
+      }
+      .field-group{
+        margin-bottom: 0;
+        input[type=text]{
+          width: 48%;
+          height: 25px;
+          border-radius: 3px;
+          border: 1px solid #cccccc;
+          padding-left: 8px;
+        }
+        .search-error{
+          color: red;
+          margin-left: 5px;
+          display: none;
+        }
+      }
+    }
+    .modal-body{
+      .waybill-body{
+        .order-list-head{
+          background-color: #cccccc;
+          width: 100%;
+          span{
+            display: inline-block;
+            width: 47%;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+        ul.order-list{
+          max-height: 300px;
+          overflow-y: auto;
+          border: 1px solid #cccccc;
+          li{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #cccccc;
+            padding-left: 5px;
+            .order-id,.waybill-no{
+              display: inline-block;
+              width: 45%;
+              text-align: center;
+            }
+
+          }
+          li:hover{
+            background-color: #ccd3df;
+          }
+        }
+        .order-list-foot{
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+.modal-money{
+  .modal-content{
+    margin: 0 auto;
+    width: 30%;
+    .modal-body{
+      .field-group{
+        span{
+          display: block;
+          margin: 10px 0;
+          input[type=text]{
+            width: 48%;
+            height: 25px;
+            border-radius: 3px;
+            border: 1px solid #cccccc;
+            padding-left: 8px;
+          }
+          .money-error{
+            color: red;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: @screen-sm-min) {
+  .mod-transbill-list {
+    .waybill-money{
+      position: absolute;
+      top: 2px;
+      right: 10px;
+    }
+  }
+  .modal-waybill{
+    .modal-content{
+      margin: 0 auto;
+      width: 98%;
+      .modal-header{
+        .modal-waybill-title{
+          .transbill,.waybill{
+            em{
+              display: block;
+            }
+          }
+        }
+        .field-group{
+          input[type=text]{
+            display: block;
+          }
+        }
+      }
+      .modal-body{
+        .waybill-body{
+          ul.order-list{
+            max-height: 250px;
+          }
+        }
+      }
+    }
+  }
+  .modal-money{
+    .modal-content{
+      width: 98%;
+    }
+  }
+}
