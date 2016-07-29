@@ -1,0 +1,111 @@
+@import url('/widget/common/css-base/src/var.less');
+@import url('/widget/common/css-base/src/mixin.less');
+
+
+.mod-mymarket-visitplan {
+  .px2rem(padding-top, 100);
+  .px2rem(padding-bottom, 180);
+
+  .act-select-people {
+    position: absolute;
+    top: 0;
+    .px2rem(right, 30);
+    color: white;
+  }
+
+  .weui_navbar_item {
+    .px2rem(padding-top, 10);
+    .px2rem(padding-bottom, 10);
+    .px2rem(font-size, @font-size-text-main)
+  }
+  .weui_bar_item_on {
+    color: @color-main;
+    font-weight:bold;
+  }
+  .weui_tab_bd {
+    padding-top: 1rem;
+    .weui_btn {
+      margin-top: 0;
+      .px2rem(margin-left, 10);
+      padding: 0;
+      .px2rem(padding-left, 10);
+      .px2rem(padding-right, 10);
+      .px2rem(font-size, 28)
+    }
+  }
+  .weui_cells {
+    .px2rem(font-size, @font-size-text-main);
+  }
+
+
+
+  .data-list {
+    .px2rem(padding-bottom, 50); 
+    .px2rem(padding-top,30);
+    word-wrap: break-word;
+    position:relative;
+    .type-count{
+      .px2rem(font-size, 28);
+      // background:white;
+      .px2rem(padding-left,600);
+      font-weight: bold;
+      color: #11a8ab;
+    }
+    .weui_cells {
+      .px2rem(margin-top, 15);
+      .px2rem(padding, 20);
+      p {
+        .remFontSize(28);
+        color: #515151;
+      }
+      .weui_cell {
+        .px2rem(padding, 30);
+      }
+      .weui_cell:before {
+        left: 0;
+      }
+    }
+    .data-item {
+      .title {
+      }
+      .sum {
+        border-top: 1px solid @color-border-split;
+        .px2rem(margin-top, 20);
+        .px2rem(padding-top, 20);
+        p {
+          color: @color-main;
+        }
+      }
+    }
+    .task-type{
+      box-sizing: border-box;
+      display: inline-block;
+      position:relative;
+      width: 100%;
+      .px2rem(height,80);
+      .px2rem(line-height,80);
+      .px2rem(margin-top,5);
+      .px2rem(margin-bottom,5);
+      background-color: #DFDFDF;
+      font-weight: bold;
+      color: #11a8ab;
+      .px2rem(padding-left,20);
+      .px2rem(padding-right,20);
+      .px2rem(font-size, @font-size-text-main);
+      .unfinish{
+        color: @color-main;
+      }
+      .num{
+        float: right;
+      }
+    }
+  }
+
+  .item-empty,
+  .item-to-end {
+    text-align: center;
+    .px2rem(padding, 20);
+    color: @color-text-sub;
+    .px2rem(font-size,28);
+  }
+}
