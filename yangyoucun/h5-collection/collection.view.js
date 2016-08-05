@@ -260,12 +260,11 @@ var View = B.View.extend({
     var $subBtn = this.$('.sub-btn');
     var $num = this.$('.sub-btn span');
     if ( nowNum > 0 ) {
-      numStr = '（' + nowNum + '）';
       $subBtn.removeClass('disabled').addClass('active');
     } else {
-      numStr = '';
       $subBtn.addClass('disabled').removeClass('active');
     }
+    numStr = nowNum > 0 ? '（' + nowNum + '）' : '';
     $num.html( numStr );
   },
 
@@ -274,31 +273,20 @@ var View = B.View.extend({
    */
   _changeIconStatus: function () {
     var $triangle = this.$('.trigger i');
-    if ( $triangle.hasClass('i-triangle-t') ) {
-      $triangle.removeClass('i-triangle-t').addClass('i-triangle-b');
-    } else {
-      $triangle.removeClass('i-triangle-b').addClass('i-triangle-t');
-    }
+    $triangle.toggleClass('i-triangle-t i-triangle-b');
   },
 
   // 切换header文字，同时进入编辑状态隐藏查询框
   _changeHeader: function ( status, ele ) {
     var $header = this.$('.header');
-    var $back = this.$('.i-back', $header);
     var $title = this.$('h1', $header);
-    var $category = this.$('.category');
+    var $headerCom = this.$('.i-back,.category');
     if ( status ) {
-      if ( ele.hasClass('edit') ) {
-        ele.removeClass('edit').addClass('done').text("完成");
-        $title.text('编辑收藏');
-        $category.hide();
-        $back.hide();
-      } else {
-        ele.removeClass('done').addClass('edit').text("编辑");
-        $title.text('我的收藏');
-        $category.show();
-        $back.show();
-      }
+      var onEdit = ele.hasClass('edit');
+      ele.text( onEdit ? '完成' : '编辑' );
+      $title.text( onEdit ? '编辑收藏' : '我的收藏');
+      $headerCom[ onEdit ? 'hide' : 'show' ]();
+      ele.toggleClass('edit done');
     }
   },
 
