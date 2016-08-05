@@ -1,0 +1,163 @@
+@disabled-color: rgba(255, 255, 255, 0.5);
+.mod-collection {
+  header {
+    padding: 0;
+    .px2rem(padding-left, 30);
+    .px2rem(padding-right, 50);
+    .i-back {
+      position: relative;
+    }
+    h1 {
+      display: inline-block;
+    }
+    .edit, .done {
+      cursor: pointer;
+      .remFontSize(48);
+      &.disabled {
+        color: @disabled-color;
+      }
+    }
+  }
+  .nodata {
+    text-align: center;
+    display: none;
+    i {
+      .px2rem(margin-top, 300);
+      .px2rem(margin-bottom, 80);
+    }
+    .p1 {
+      .colorTextMain;
+      .remFontSize(@font-size-nav-bar-sub);
+      .px2rem(margin-bottom, 15);
+    }
+    .p2 {
+      color: @color-text-sub;
+      .remFontSize(@font-size-text-sub);
+      .px2rem(margin-bottom, 60);
+    }
+    .weui_btn_default {
+      .remWidth(760);
+      .remHeight(90);
+      .remLineHeight(90);
+      .remFontSize(@font-size-text-sub);
+      color: @color-main;
+      border: 0 none;
+    }
+  }
+  .category  {
+    background: @color-text-red;
+    height: 100%;
+    position: relative;
+    .px2rem(height, 80);
+    .remLineHeight(80);
+    .trigger {
+      color: #ffffff;
+      .iconf {
+        float: right;
+        &::before {
+          .remLineHeight(75);
+          .remFontSize(50);
+        }
+      }
+    }
+    .trigger,.list li {
+      .px2rem(padding-left, 65);
+      .px2rem(padding-right, 30);
+    }
+    .list {
+      position: absolute;
+      .px2rem(top, 80);
+      background: #fff;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      z-index: 999;
+      -webkit-transition: height 0.2s ease;
+      transition: height 0.2s ease;
+      .cur {
+        .remLineHeight(100);
+        .remHeight(100);
+        border-top: 1px solid @color-border-split;
+        &.active {
+          color: @color-text-red;
+        }
+      }
+      &.active {
+        height: auto;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  .collections {
+    .item {
+      &.weui_cells_checkbox {
+        &:nth-last-child(1) {
+          .px2rem(margin-bottom, 150);
+        }
+        .weui_cell_hd {
+          float: left;
+          padding-right: 0;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          .weui_icon_checked:before {
+            .remFontSize(60);
+            .px2rem(margin-left, 40);
+            .px2rem(margin-right, 40);
+            .remLineHeight(300);
+          }
+          .weui_cell {
+            padding: 0;
+            -moz-user-select:none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          }
+        }
+        .item-content {
+          float: left;
+          margin-right: 0;
+          margin-left: 0;
+          .buy {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .item-to-end {
+    display: none;
+  }
+  .sub-btn {
+    z-index: 999;
+    position: fixed;
+    .px2rem(bottom, -120);
+    opacity: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    background: @color-main;
+    text-align: center;
+    .remHeight(120);
+    .remFontSize(40);
+    .remLineHeight(120);
+    transition: all 0.5s ease;
+    &.animate {
+      bottom: 0;
+      opacity: 1;
+    }
+    &.disabled {
+      color: @disabled-color;
+    }
+  }
+}
+
+// PC 适配
+html.adaptToPC {
+  .sub-btn {
+    width: @pc-width;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    &.disabled {
+      color: @disabled-color;
+    }
+  }
+}
