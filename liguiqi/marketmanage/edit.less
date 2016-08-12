@@ -1,0 +1,140 @@
+.mod-market-edit {
+    .mod-btn-bar {
+        position: absolute;
+        right: 20px;
+        top: 40px;
+    }
+    .main {
+        border-top: 1px solid @color-border;
+        margin-top: 10px;
+        padding-top: 10px;
+        position: relative;
+        .right {
+            position: absolute;
+            top: 50px;
+            right: 0;
+        }
+        .lsh-ui-form.ui-form-preview-img-upload.file-wrap.file-required.file-empty.border-red{
+            border-color: #d7d8d9;
+        }
+        .ui-form-preview-img-upload {
+            &.file-wrap {
+                width: 348px;
+                height: 348px;
+            }
+            .preview-wrap {
+                width: 330px;
+                height: 330px;
+            }
+            .file-preview {
+                max-height: 100%;
+                max-width: 100%;
+                height: 100%;
+            }
+            input[type=file] {
+                width: 348px;
+                height: 348px;
+            }
+            .cover-tip {
+                width: 350px;
+                height: 350px;
+                line-height: 350px;
+            }
+            &.file-empty{
+                background-position: center center;
+            }
+        }
+        .register-address-abnormal{
+            color : red;
+        }
+    }
+    .field-group-error {
+        .search-item {
+            border-color: @color-red;
+        }
+    }
+    .field-label {
+        .col-1();
+    }
+    .field-control {
+        .col-3();
+        &[readonly] {
+            border: 0;
+        }
+    }
+    .marker-status{
+        width: 80%;
+    }
+    .field-msg {
+        margin-left: 10px;
+    }
+    .search-item {
+        .col-2();
+        margin-right: 20px;
+    }
+    .mark-map {
+        width: 100%;
+        height: 500px;
+        display: inline-block;
+        vertical-align: top;
+        .field-control {
+            width: auto;
+        }
+    }
+
+    .map-legend{
+        display: inline-block;
+        margin: 0 0 0 20px;
+        ul{
+            li{
+                display: inline-block;
+                img{
+                    display: inline-block;
+                    width: 20px;
+                    height: 30px;
+                    margin: 0 10px;
+                    margin-bottom: -10px;
+                }
+                button.btn-hover{
+                    background-color: #65B9F5;
+                    border-color: #65B9F5;
+                }
+                button.btn-primary{
+                    background-color: #2791DC;
+                    border-color: #2791DC;
+                }
+
+            }
+        }
+    }
+}
+
+//响应式
+@media screen and (max-width: @screen-sm-min) {
+   .mod-market-edit {
+        .main {
+            .field-label {
+                width: 100%;
+            }
+            .field-control {
+                width: 100%;
+            }    
+            .mark-map {
+                width: 100%;
+            }
+            .floated {
+                float: none;
+                width: 100%;
+                .image-viewer {
+                    width: 100%;
+                }
+            }
+            .floated.right{
+                position: relative;
+            }
+            .image-uploader {
+                float: none;
+            }
+        }
+   } 
+}
