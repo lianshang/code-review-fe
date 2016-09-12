@@ -1,0 +1,434 @@
+.mod-monitor-view{
+  .map-wrap{
+    position: relative;
+    width: 100%;
+    .plan-map{
+      width: 100%;
+      height: 550px;
+      .mod-map{
+        .container{
+          .amap-controls{
+            .amap-toolbar{
+              top:320px!important;
+              .amap-locate{
+                display: none!important;
+              }
+            }
+            .amap-scalecontrol{
+              left: 50px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .marker-o-y-auto-wave-l,
+  .marker-o-y-auto-checked-wave-l,
+  .marker-o-y-auto-wave-m,
+  .marker-o-y-auto-checked-wave-m,
+  .marker-o-y-auto-wave-s,
+  .marker-o-y-auto-checked-wave-s,
+  .marker-auto-wave-l,
+  .marker-auto-checked-wave-l,
+  .marker-auto-wave-m,
+  .marker-auto-checked-wave-m,
+  .marker-auto-wave-s,
+  .marker-auto-checked-wave-s,
+  .marker-y-auto-wave-l,
+  .marker-y-auto-checked-wave-l,
+  .marker-y-auto-wave-m,
+  .marker-y-auto-checked-wave-m,
+  .marker-y-auto-wave-s,
+  .marker-y-auto-checked-wave-s,
+  .marker-o-auto-wave-s,
+  .marker-o-auto-checked-wave-s,
+  .marker-o-auto-wave-l,
+  .marker-o-auto-checked-wave-l,
+  .marker-o-auto-wave-m,
+  .marker-o-auto-checked-wave-m
+  {
+    cursor: pointer;
+    left: -1px;
+    text-align: center;
+    color: white;
+    font: 12px arial,simsun,sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  //大圆
+  .marker-auto-wave-l,
+  .marker-auto-checked-wave-l,
+  .marker-y-auto-wave-l,
+  .marker-y-auto-checked-wave-l,
+  .marker-o-auto-wave-l,
+  .marker-o-auto-checked-wave-l,
+  .marker-o-y-auto-wave-l,
+  .marker-o-y-auto-checked-wave-l
+  {
+    background-size: 75px!important;
+    height: 75px;
+    width: 75px;
+    span{
+      display: inline-block;
+      margin-top: 23px;
+    }
+  }
+
+  //波次中圆
+  .marker-auto-wave-m,
+  .marker-auto-checked-wave-m,
+  .marker-y-auto-wave-m,
+  .marker-y-auto-checked-wave-m,
+  .marker-o-auto-wave-m,
+  .marker-o-auto-checked-wave-m,
+  .marker-o-y-auto-wave-m,
+  .marker-o-y-auto-checked-wave-m
+  {
+    background-size: 60px!important;
+    height: 60px;
+    width: 60px;
+    span{
+      display: inline-block;
+      margin-top: 18px;
+    }
+  }
+  //波次小圆
+  .marker-auto-wave-s,
+  .marker-auto-checked-wave-s,
+  .marker-y-auto-wave-s,
+  .marker-y-auto-checked-wave-s,
+  .marker-o-auto-wave-s,
+  .marker-o-auto-checked-wave-s,
+  .marker-o-y-auto-wave-s,
+  .marker-o-y-auto-checked-wave-s
+  {
+    background-size: 45px!important;
+    height: 45px;
+    width: 45px;
+    span{
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+  //波次小圆
+  .marker-auto-wave-l,
+  .marker-auto-wave-m,
+  .marker-auto-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/auto-wave.png) no-repeat;
+  }
+  //昨天波次小圆
+  .marker-y-auto-wave-l,
+  .marker-y-auto-wave-m,
+  .marker-y-auto-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/y-auto-wave.png) no-repeat;
+  }
+  //特殊提示
+  .marker-o-auto-wave-l,
+  .marker-o-auto-wave-m,
+  .marker-o-auto-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/auto-waves.png) no-repeat;
+  }
+  //昨天,特殊提示
+  .marker-o-y-auto-wave-l,
+  .marker-o-y-auto-wave-m,
+  .marker-o-y-auto-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/y-auto-waves.png) no-repeat;
+  }
+
+  //昨天选中波次大圆
+  .marker-y-auto-checked-wave-l,
+  .marker-y-auto-checked-wave-m,
+  .marker-y-auto-checked-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/ycheckedwave3.png) no-repeat;
+  }
+  //昨天选中波次大圆,特殊提示
+  .marker-o-y-auto-checked-wave-l,
+  .marker-o-y-auto-checked-wave-m,
+  .marker-o-y-auto-checked-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/ycheckedwaves.png) no-repeat;
+  }
+  //选中波次大圆
+  .marker-auto-checked-wave-l,
+  .marker-auto-checked-wave-m,
+  .marker-auto-checked-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/checkedwave3.png) no-repeat;
+  }
+  //选中波次大圆,特殊提示
+  .marker-o-auto-checked-wave-l,
+  .marker-o-auto-checked-wave-m,
+  .marker-o-auto-checked-wave-s{
+    background:url(/static/common/widget/ui/map/marker_icons/checkedwaves.png) no-repeat;
+  }
+
+  .marker-auto-un-plan-order,
+  .marker-auto-y-un-plan-order,
+  .marker-checked-auto-un-plan-order,
+  .marker-checked-auto-y-un-plan-order,
+  .marker-o-auto-y-un-plan-order,
+  .marker-o-auto-un-plan-order,
+  .marker-o-checked-auto-y-un-plan-order,
+  .marker-o-checked-auto-un-plan-order{
+    background-size: 18px!important;
+    height: 28px;
+    width: 18px;
+    cursor: pointer;
+    left: -1px;
+    text-align: center;
+    color: black;
+    font: 10px arial,simsun,sans-serif;
+    padding-top: 2px;
+  }
+
+  //线路监控--自动生成的订单
+  .marker-auto-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/outwaveorder.png) no-repeat;
+  }
+  .marker-o-auto-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/unplanorders.png) no-repeat;
+  }
+  //线路监控--自动生成的订单
+  .marker-auto-y-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/youtwaveorder.png) no-repeat;
+  }
+
+  //线路监控--自动生成的打车限行订单
+  .marker-o-auto-y-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/yunplanorders.png) no-repeat;
+  }
+
+  //选中今日未排线订单(包含特殊提示)
+  .marker-o-checked-auto-un-plan-order,
+  .marker-checked-auto-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/checkedorder.png) no-repeat;
+  }
+
+  //选中昨日未排线订单(包含特殊提示)
+  .marker-checked-auto-y-un-plan-order,
+  .marker-o-checked-auto-y-un-plan-order{
+    background:url(/static/common/widget/ui/map/marker_icons/ycheckedorder.png) no-repeat;
+  }
+  //重复地址做标记,使用的样式
+  .echo-address-marker{
+    width: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #807C7C;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position:absolute;
+    top:30px;
+    left:-4px;
+  }
+
+  //波次圆结束
+
+  //全选部展开
+  .wave-type-change {
+    //display: none;
+    background-color: #FFF;
+    padding-left: 14px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    line-height: 30px;
+    //cursor: pointer;
+    border: 1px solid rgba(51,51,51,.2);
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,.2);
+    border-top: 0;
+    border-left: 0;
+    .count {
+      color: darkred;
+    }
+    position: absolute;
+    top: 80px;
+    width: 350px;
+    font-size: 13px;
+  }
+//上面的导航栏
+  .ui-top-bar-view {
+    //display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 12px;
+
+    .content {
+      display: inline-block;
+      em {
+        font-style: normal;
+        font-weight: bold;
+        color: #FF9400;
+      }
+      .wave-title{
+        font-size:16px;
+        font-weight:bold;
+        margin:0 0 0 10px;
+        strong{
+          color: #1289cd;
+        }
+      }
+      .wave-status {
+        margin: auto 20px;
+      }
+    }
+  }
+
+
+  //右侧UI
+  .ui-wave-detail-view {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 253px;
+    height: 378px;
+    font-size: 13px;
+
+    background-color: #FFF;
+    padding-bottom: 10px;
+    //cursor: pointer;
+    border: 1px solid rgba(51, 51, 51, .2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+    border-top: 0;
+    border-left: 0;
+    &.hide-wave-details {
+      display: none;
+    }
+
+    .wave-detail-head {
+      padding: 0 12px 10px;
+      line-height: 30px;
+
+      h2 {
+        margin-bottom: 0;
+      }
+      .wave-info {
+        overflow: hidden;
+        span {
+          display: block;
+          width: 50%;
+          float: left;
+        }
+      }
+      .only-address {
+        margin-right: 6px;
+      }
+    }
+    .wave-detail-content {
+      height: 218px;
+      overflow-y: scroll;
+      &.only-address-control {
+        .order-title,
+        .order-info span + span,
+        .order-id {
+          display: none;
+        }
+      }
+    }
+    .order-only-address {
+      padding-top: 10px;
+      .wave-title,
+      .car-type,
+      .wave-info {
+        display: none;
+      }
+      .wave-detail-order {
+        border-top: none;
+        &:hover {
+          background: #fff;
+        }
+      }
+      .wave-detail-content {
+        height: 328px;
+        overflow-y: scroll;
+
+      }
+    }
+    .wave-detail-order {
+      padding: 6px 14px;
+      border-top: 1px solid #CECECE;
+      &:hover {
+        background: #f2f2f2;
+        cursor: pointer;
+      }
+      .order-title {
+        line-height: 30px;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+      }
+      .order-id {
+        line-height: 30px;
+        color: #333;
+        font-size: 12px;
+        strong {
+          font-weight: normal;
+          color: #333;
+        }
+      }
+      .order-info {
+        span {
+          font-size: 14px;
+          line-height: 20px;
+          padding: 0 10px 0 0;
+        }
+        span + span {
+          font-size: 12px;
+          padding: 0;
+          display: block;
+        }
+      }
+      .restriction {
+        color: #8b0000;
+        font-style: italic;
+      }
+
+    }
+  }
+
+}
+.mod-header{
+  display: none;
+}
+.l-fixed-con{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  border: none;
+  .l-left-con{
+    display: none;
+  }
+  .l-right-con{
+    border: none;
+    width: 100%;
+    padding-left: 0;
+    .l-right-in{
+      border: none;
+      padding: 0!important;
+      width:100%;
+      .mod-plan-view{
+        position: relative;
+        border: none;
+        .bread-crumb{
+          position: absolute;
+          bottom: 0;
+          z-index: 1100;
+          left: 270px;
+          font-weight: bold;
+          background-color: rgba(255,255,255,0.8);
+        }
+
+      }
+    }
+  }
+}
+.mod-footer{
+  display: none;
+}

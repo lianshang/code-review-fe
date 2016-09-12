@@ -1,0 +1,45 @@
+var tpl = {
+    sideBarMain: [
+        '<div {{if !order_list}}class="order-only-address"{{/if}}>',
+        '<div class="wave-detail-head">',
+            '<h2 class="wave-title">线路编号:{{wave_id}}</h2>',
+            '<div><label><input class="only-address" type="checkbox"/>只看地址</label></div>',
+            '<div class="car-type">车型:{{transportationType[transportation_type]}}</div>',
+            '<div class="wave-info">',
+            '<div>',
+            '<span>超市数:{{address_count}}</span>',
+            '<span>订单数:{{order_count}}</span>',
+            '</div>',
+            '<div>',
+            '<span>公里数:{{mileage}}KM</span>',
+            '<span>装箱数:{{container_count}}</span>',
+            '</div>',
+            '</div>',
+        '</div>',
+        '<div class="wave-detail-content">',
+        '{{if marketList}}',
+            '{{each marketList as value index}}',
+                '<div class="wave-detail-order">',
+                '<h3 class="order-title">{{index+1}}、{{value.address_info.market_name}}</h3>',
+                '<div class="order-info">',
+                    '<span>{{value.address_info.address}}</span>',
+                    '<span>箱数:{{value.container_count}}</span>',
+                '</div>',
+                '{{if value.restriction_flag==1}}<div class="restriction">大车限行</div>{{/if}}',
+                '<div class="order-id">订单：<strong>{{value.order_id}}</strong></div>',
+                '</div>',
+            '{{/each}}',
+        '{{/if}}',
+        '</div>',
+        '</div>'
+    ].join(''),
+    topBar:[
+        '<div class="content">',
+            '<span class="wave-title"><strong>线路监控</strong>-详情</span>',
+            '<span class="wave-status">(&nbsp;&nbsp;线路编号: <em class="num">{{wave_id}}</em></span>',
+            '<span class="wave-status">改动类型: <em class="num">{{statusConf[status]}}</em></span>',
+            '<span class="wave-status"> 结果集计算时间: <em class="num">{{plan_time}}</em>&nbsp;&nbsp;)</span>',
+        '</div>'
+    ].join('')
+};
+module.exports = tpl;
