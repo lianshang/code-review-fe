@@ -1,0 +1,171 @@
+.mod-coupon {
+    .header {
+        .px2rem(padding-right, 20);
+        .add {
+            .remFontSize(@font-size-nav-bar-sub);
+        }
+    }
+    .list {
+        .px2rem(margin-left, @size-margin-frame);
+        .px2rem(margin-right, @size-margin-frame);
+        background: transparent;
+    }
+    // 不使用优惠券
+    .no-citem {
+        color: @color-text-main;
+        .remHeight(150);
+        .remFontSize(@font-size-nav-bar-sub);
+        .px2rem(margin-bottom, @size-margin-block);
+        background: #fff;
+        border-radius: 10px;
+    }
+    // 优惠券
+    .citem {
+        color: @color-text-main;
+        .remFontSize(@font-size-text-main);
+        .px2rem(padding-top, 20);
+        padding-bottom: 0;
+        .px2rem(margin-bottom, @size-margin-block);
+        background: #fff;
+        border-radius: 10px;
+        border: 0;
+        .sep {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 0;
+            .px2rem(border-top-width, 20);
+            border-style: solid;
+            border-color: @color-text-red;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        p {
+          .px2rem(padding-bottom, 10);
+          .remFontSize(30);
+          &:first-child {
+            .remFontSize(@font-size-nav-bar-sub);
+            .px2rem(padding-bottom, 20);
+          }
+        }
+        // 无效状态
+        &.disabled {
+            border-top-color: @color-text-sub;
+            color: @color-text-sub;
+            .sep {
+                border-color: @color-text-sub;
+            }
+            .money {
+                color: @color-text-sub;
+            }
+            // 已过期 or 已使用
+            .weui_cell_ft {
+                .remFontSize(@font-size-nav-bar-sub);
+                color: @color-border-split;
+                .remWidth(180);
+                .remHeight(180);
+                .remLineHeight(180);
+                text-align: center;
+                font-weight: bold;
+                .px2rem(border-radius, 90);
+                border: 3px solid @color-border-split;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                .px2rem(top, 35);
+                .px2rem(right, 15);
+            }
+            .tip {
+                color: @color-text-sub;
+            }
+        }
+    }
+    .conflict {
+        .tip {
+            color: @color-text-red;
+        }
+    }
+    .money {
+        width: 38%;
+        color: @color-text-red;
+        .remFontSize(150);
+        &:before {
+            content: "￥";
+            .remFontSize(70);
+        }
+    }
+    .weui_check:checked+.weui_icon_checked:before {
+        color: @color-main;
+    }
+    .weui_cells_checkbox .weui_icon_checked:before {
+        color: @color-text-main;
+        .remFontSize(48);
+    }
+
+
+    .empty {
+        .remFontSize(48);
+        .px2rem(padding-top, 340);
+        color: @color-text-main;
+        text-align: center;
+        &:before {
+            display: block;
+            margin: auto;
+            .px2rem(margin-bottom, 180);
+            content: '';
+            .px2rem(width, 327);
+            .px2rem(height, 327);
+            background: 0 0 url(/widget/common/css-base/src/icon-img/coupon_null_icon.png);
+            background-size: 100% 100%;
+        }
+    }
+    .loading,
+    .end {
+        .remPadding(50);
+        .remFontSize(@font-size-text-main);
+        text-align: center;
+        .unable {
+            color: @color-main;
+        }
+        .i-arrow-r {
+            color: @color-main;
+        }
+    }
+    .end {
+        color: @color-text-sub;
+        display: none;
+    }
+    .empty {
+        .unable {
+            color: @color-main;
+        }
+        .i-arrow-r{
+            color: @color-main;
+        }
+    }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+    .mod-coupon {
+        .header {
+            padding-left: 0;
+            padding-right: 0;
+            i {
+                margin-right: .5rem;
+            }
+        }
+        .list {
+            margin-left: 0;
+            margin-right: 0;
+            > .item {
+                margin-top: 10px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+}
