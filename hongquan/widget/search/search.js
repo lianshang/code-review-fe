@@ -68,6 +68,12 @@ Action.prototype = {
         // var winHeight = $(window).height();
         // var innerHeight = winHeight - headerHeight;
         // this.$itemList.height(innerHeight);
+
+        var headerHeight = this.$mod.find('.header').height();
+        var winHeight = $(window).height();
+        var innerHeight = winHeight - headerHeight;
+        this.$result.height(innerHeight);
+
         this.renderHistory();
         this.isInWx() && this.$mod.find('.i-scan').removeClass('hide');
     },
@@ -80,6 +86,10 @@ Action.prototype = {
         var itemView = new UIItemListView().init({itemList: list, isEnd: isEnd, now: now});
         itemView.appendTo(this.$itemList);
         this.$result.removeClass('hide');
+        //判断是否是新请求的数据，如果是那么置顶
+        if(pn == rn){
+            this.$result.scrollTop(0);
+        }
         isEnd || this.$loading.removeClass('hide');
     },
     renderNoResult: function() {
@@ -98,6 +108,11 @@ Action.prototype = {
     // },
     jump: function(query) {
         location.replace('/#home/search?q=' + encodeURIComponent(query) + '&frm=' + this.opts.frm);
+
+        //更新hash
+        app.cacheView.existCache() && app.cacheView.updateCacheHash(location.hash);
+
+        app.updateTopHistoryHash(location.hash);
         // backbone bug https://github.com/jashkenas/backbone/issues/3857
         // app.navigate('home/search?q=' + encodeURIComponent(query) + '&frm=' + this.opts.frm, {trigger: true, replace: false});
     },
@@ -338,6 +353,8 @@ Action.prototype = {
                 app.navigate('#home/search?frm='+self.opts.frm, {trigger: true, replace: true});
             } else {
                 var target = self.opts.frm;
+                //清空缓存
+                app.cacheView.cleanCacheView();
                 window.location.href = target === 'category' ? '/#category' : '/#';
             }
         });
@@ -365,14 +382,14 @@ Action.prototype = {
                 }
             });
         }
-        self.$main.on('scroll.search', function() {
+        self.$result.on('scroll.search', function () {
             if (!self.stopLoading) {
                 var $this = $(this);
                 clearTimeout(timer);
-                timer = setTimeout(function() {
+                timer = setTimeout(function () {
                     var scrollTop = $this.scrollTop();
                     var height = $this.height();
-                    var scrollHeight = document.body.scrollHeight;
+                    var scrollHeight = self.$itemList.height();
 
                     if (scrollTop + height + 10 > scrollHeight) {
                         isEnd || self.search(self.opts.q, true);

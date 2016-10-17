@@ -9,6 +9,8 @@ var UIItemListView = require('home:widget/ui/ui-item-list-view/ui-item-list-view
 // var actionBuyItem = require('home:widget/ui/action-buy-item/action-buy-item.js');
 var CartMainModel = require('home:widget/cart/cart.main.model.js');
 var Alert = require('home:widget/ui/alert/alert.js');
+var app = require('home:widget/ui/router/router.js');
+
 
 var modName = 'mod-activity-detail header-fixed';
 
@@ -72,6 +74,9 @@ function activityAction(opts) {
                     // 商品
                     _itemListView.appendTo($viewCanvas.find('.items ul'));
 
+                    //设置容器的高度
+                    setViewCanvasHeight($viewCanvas);
+
                     // 检查活动是否进行中
                     checkValid(data, now);
 
@@ -89,6 +94,16 @@ function activityAction(opts) {
             error: function(xhr, type){
                 //Alert.show('Ajax error!')
             }
+        });
+    }
+
+    //设置容器的高度
+    function setViewCanvasHeight($viewCanvas) {
+        var $activityBox = $viewCanvas.find('.activity-box');
+        var clientHeight = $(window).height();
+        var headerHeight = $viewCanvas.find('.header').height();
+        $activityBox.css({
+            height: clientHeight - headerHeight
         });
     }
 
@@ -110,6 +125,8 @@ function activityAction(opts) {
 
     function goBack() {
         var backUrl = helper.queryString('back');
+        //销毁当前的缓存对象
+        app.cacheView.cleanCacheView();
         if (backUrl == 'cart') {
             location.href = '/#shopping/cart';
         } else {

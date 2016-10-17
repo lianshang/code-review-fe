@@ -84,7 +84,7 @@ var tpls = {
                             '{{item.currentPrice | formatPrice}}',
                         '</span>',
                         '{{if item.deletePrice}}',
-                            '<del>{{item.deletePrice | formatPrice}}</del>',
+                            '<del class="delete-price">{{item.deletePrice | formatPrice}}</del>',
                         '{{/if}}',
                         '{{if item.history_info && item.history_info.coupon_money && item.history_info.coupon_money > 0}}',
                             '<span class="price-lower"><i class="iconf i-direc-down"></i>降价{{item.history_info.coupon_money}}</span>',

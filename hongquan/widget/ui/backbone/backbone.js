@@ -1739,6 +1739,10 @@
     checkUrl: function(e) {
       var current = this.getFragment();
 
+      // backbone bug https://github.com/jashkenas/backbone/issues/3857
+      current = this.decodeFragment(current);//自己加的，当有中文字符时，转化转义字符成中文字符
+
+
       // If the user pressed the back button, the iframe's hash will have
       // changed and we should use that for comparison.
       if (current === this.fragment && this.iframe) {

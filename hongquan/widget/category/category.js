@@ -41,8 +41,9 @@ var View = Backbone.View.extend({
     addEvent: function(){
         var that = this;
         var _events = {
-          'click .i-item-add': 'actionAdd',
-          'click .i-item-subtract': 'actionSub',
+            //这俩个方法提到了ui-item-list-view.js里面去做了
+         /* 'click .i-item-add': 'actionAdd',
+          'click .i-item-subtract': 'actionSub',*/
           'click .header .header-input': 'actionSearch'
         };
         _events[conf.evClick + " .brand-btn,.brand,.brand-mask"] = function () {
@@ -65,13 +66,14 @@ var View = Backbone.View.extend({
       e.preventDefault();
       var $target = $(e.target);
       if ( $target.hasClass('i-scan') ) {
-        app.navigate('#home/search?frm=home&action=scan', {trigger: true, replace: true});
+          //这里跳过去应该是分类页
+        app.navigate('#home/search?frm=category&action=scan', {trigger: true, replace: true});
       } else {
-        app.navigate('#home/search?frm=home', {trigger: true, replace: true});
+        app.navigate('#home/search?frm=category', {trigger: true, replace: true});
       }
     },
 
-    // 加车时，把原价隐藏掉
+    /*// 加车时，把原价隐藏掉
     actionAdd: function ( e ) {
       var $ele = $( e.target );
       var $del = $ele.parent().parent().find('.operation del').hide();
@@ -83,7 +85,7 @@ var View = Backbone.View.extend({
       var $del = $ele.parent().parent().find('.operation del').hide();
       var count = $ele.next().text();
       if ( count == 0 ) $del.show();
-    },
+    },*/
 
     initialize: function (options) {
       this.model = new Model();
@@ -316,6 +318,9 @@ var CategoryView = function (opts) {
         // 请求品牌分类数据
         brandView.getBrandList( _currentCategoryId );
         app.navigate( "category?cat_id="+_currentCategoryId+"&brand="+conf.brand, {trigger: false, replace: true});
+        //更新hash
+        app.updateTopHistoryHash(location.hash);
+        app.cacheView.existCache() && app.cacheView.updateCacheHash(location.hash);
     }
 
     function render() {
@@ -389,6 +394,9 @@ var CategoryView = function (opts) {
                 detail: logDetail
             });
             app.navigate( "category?cat_id="+newCategoryId+"&brand="+newBrandValue, {trigger: false, replace: true} );
+            //更新hash
+            app.updateTopHistoryHash(location.hash);
+            app.cacheView.existCache() && app.cacheView.updateCacheHash(location.hash);
         });
 
         // 商品

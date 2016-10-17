@@ -11,7 +11,7 @@ module.exports = {
             '</form>',
         '</header>',
         // '<div class="main">',
-            '<div class="result">',
+            '<div class="result hide">',
                 '<div class="list"></div>',
                 '<div class="loading hide">数据加载中...</div>',
             '</div>',

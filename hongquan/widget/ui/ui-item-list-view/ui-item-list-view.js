@@ -229,6 +229,15 @@ var UIItemListView = function () {
             if (sum) {
                 $item.siblings('.sum').find(".sum-num").text(itemInfo.buy_info.summary_text);
             }
+            // 显示隐藏原价，只有在分类页才适用
+            var $categoryItem = $item.parents('.mod-category');
+            if($categoryItem && $categoryItem.length){
+                if(currentCount == 0){
+                    $item.find('.delete-price').show();
+                }else{
+                    $item.find('.delete-price').hide();
+                }
+            }
             // 校验订购数量
            validate && that.checkItemNum($item, currentCount, itemInfo);
         });
