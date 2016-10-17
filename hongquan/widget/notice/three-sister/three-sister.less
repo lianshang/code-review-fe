@@ -1,0 +1,181 @@
+/**
+* 定义常用的字号
+*/
+@font-size-title: 20px;
+@font-size-main: 14px;
+@font-size-sub: 12px;
+@font-size-button: 16px;
+
+
+
+/**
+* 定义常用的颜色
+*/
+//文本内容
+@color-text-main: #303133;
+@color-text-sub: #919599;
+@color-text-warn: #ff7366;
+//提示
+@color-text-notice: #f27900;
+//操作
+@color-link-action: #2e8ae6;
+//容器
+@color-box-border: #e6e6e6;
+//表单
+@color-input-border: #d7d8d9;
+
+
+
+/**
+* 容器和布局相关
+*/
+@main-form-padding: 30px;
+@main-block-margin: 30px;
+
+.ls-form-group {
+  .ls-form-control.datepick {
+    background-image: url("./img/calendar.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+  .attachment {
+    text-decoration: underline;
+  }
+
+
+  //文件上传
+  .file-form {
+    display: inline-block;
+    margin: 0;
+  }
+  .file-button-wrap {
+    position: relative;
+    width: 55px;
+    display: inline-block;
+  }
+  .file {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+  }
+  .file-button {
+    cursor: pointer;
+  }
+
+  //文件上传
+  .file-list {
+    .file-button {
+      display: none;
+    }
+    .delete {
+      position: absolute;
+      z-index: 11;
+      background-color: white;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      vertical-align: middle;
+      text-align: center;
+      color: @color-text-sub;
+      cursor: pointer;
+    }
+    .delete:hover {
+      color: red;
+    }
+    .file-empty .delete {
+      display: none;
+    }
+    .file-list {
+      margin-bottom: -20px;
+    }
+    .file-wrap {
+      width: 198px;
+      height: 198px;
+
+      margin-right: 48px;
+      margin-bottom: 20px;
+      display: inline-block;
+      border: 1px solid @color-input-border;
+      position: relative;
+    }
+    .file-wrap.file-empty {
+      .preview-wrap {
+        display: none;
+      }
+    }
+    .file-empty {
+      background: 9px 9px no-repeat url("./img/upload-detail.png");
+    }
+    //.file-wrap.file-empty.item1 {
+    //  background: 9px 9px no-repeat url("./img/upload-frontside.png");
+    //}
+    //.file-wrap.file-empty.item2 {
+    //  background: 9px 9px no-repeat url("./img/upload-backside.png");
+    //}
+    input[type=file] {
+      display: inline-block;
+      width: 198px;
+      height: 198px;
+      overflow: hidden;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      *margin-left: -5px;
+      _margin-left: -5px;
+    }
+
+    .file-wrap:hover {
+      .cover-tip {
+        display: block;
+      }
+    }
+    .file-wrap.file-empty {
+      .cover-tip {
+        display: none;
+      }
+    }
+    .cover-tip {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      line-height: 200px;
+      z-index: 3;
+    }
+
+    .preview-wrap {
+      display: inline-block;
+      width: 180px;
+      height: 180px;
+      margin-left: 9px;
+      margin-top: 9px;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff;
+      z-index: 2;
+    }
+    .file-preview {
+      max-height: 180px;
+      max-width: 180px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

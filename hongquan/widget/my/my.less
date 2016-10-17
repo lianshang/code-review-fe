@@ -1,0 +1,120 @@
+/**
+* @require "home:widget/ui/header/header.less"
+*/
+
+@height-item: 120;
+.mod-my {
+    .header {
+      h1 {
+        .px2rem(margin-left, 22);
+      }
+    }
+    .group {
+        background: #fff;
+        .px2rem(margin-top, 20);
+        .px2rem(line-height, @height-item);
+        li {
+            .px2rem(height, @height-item);
+            border-top: 1px solid @color-border-split;
+            &:first-child {
+                border-top: 0;
+            }
+            a {
+                display: block;
+            }
+            &.orders-num {
+              .remPaddingAll(0,20,0,20);
+              .order-status {
+                width: 100%;
+                height: inherit;
+                .displayFlex;
+                .flexAlignItems;
+                .flexJustifyContent(space-around, justify);
+                span {
+                  display: block;
+                  .px2rem(padding, 10);
+                  .px2rem(padding-left, 29);
+                  .px2rem(padding-right, 29);
+                  .px2rem(border-radius, 10);
+                  .remFontSize(34);
+                  .remHeight(45);
+                  .remWidth(131);
+                  .remLineHeight(48);
+                  text-align: center;
+                  border: 1px solid #000;
+                  position: relative;
+                  &.active {
+                    background: #ffccb2;
+                  }
+                  i {
+                    position: absolute;
+                    .px2rem(top, -20);
+                    .px2rem(right, -20);
+                    .remWidth(45);
+                    .remHeight(45);
+                    .remLineHeight(48);
+                    .remFontSize(25);
+                    .px2rem(border-radius, 45);
+                    text-align: center;
+                    vertical-align: middle;
+                    color: white;
+                    background: #FF8347;
+                    border-bottom-left-radius: 0;
+                  }
+                  &:nth-last-child(1) {
+                    i {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+        }
+        .icon {
+            .px2rem(margin-left, 48);
+            .px2rem(margin-right, 26);
+        }
+        .right {
+            float: right;
+            clear: right;   //避免跨行影响
+            line-height: inherit;
+            .px2rem(margin-right, 40);
+        }
+        .tips {
+            .remFontSize(30);
+            color: @color-main;
+            .px2rem(margin-right, 20);
+        }
+    }
+    .operation {
+        text-align: center;
+        color: @color-main;
+        .px2rem(margin-top, 50);
+        display: block;
+    }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+    .mod-my {
+        .main {
+            .operation {
+                cursor: pointer;
+                .transition;
+                &:hover {
+                    background: #ccc;
+                }
+            }
+            .group {
+                li {
+                    .transition;
+                    &:hover {
+                        background: #ccc;
+                    }
+                }
+            }
+        }
+    }
+}

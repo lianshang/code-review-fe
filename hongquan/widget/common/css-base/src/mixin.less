@@ -1,0 +1,93 @@
+@radix: 100;
+.px2rem(@name, @px) {
+    @{name}: @px / @radix * 1rem;
+}
+.remFontSize(@px) {
+  .px2rem(font-size, @px);
+}
+.remLineHeight(@px) {
+  .px2rem(line-height, @px);
+}
+.remWidth(@px) {
+  .px2rem(width, @px);
+}
+.remHeight(@px) {
+  .px2rem(height, @px);
+}
+.remMargin(@px) {
+  .px2rem(margin, @px);
+}
+.remPadding(@px) {
+  .px2rem(padding, @px);
+}
+.remPaddingAll( @top: auto, @right: auto, @bottom: auto, @left: auto ) {
+  .px2rem(padding-top, @top);
+  .px2rem(padding-right, @right);
+  .px2rem(padding-bottom, @bottom);
+  .px2rem(padding-left, @left);
+}
+.remMarginAll( @top: auto, @right: auto, @bottom: auto, @left: auto ) {
+  .px2rem(margin-top, @top);
+  .px2rem(margin-right, @right);
+  .px2rem(margin-bottom, @bottom);
+  .px2rem(margin-left, @left);
+}
+
+//常用常量样式mixin
+.colorTextMain() {
+  color: @color-text-main;
+}
+.colorTextSub() {
+  color: @color-text-sub;
+}
+.fontSizeMainText() {
+  font-size: @font-size-text-main;
+}
+.fontSizeSubText() {
+  font-size: @font-size-text-sub;
+}
+
+// PC适配通用文件
+@pc-width : 540px;
+// 如果连续点击会出现选中的情况
+// 在多次点击的元素，添加该指定即可
+.userSelect(@val: none) {
+  -webkit-user-select: @val;
+  -moz-user-select: @val;
+  -ms-user-select: @val;
+}
+.transition(@prop: all, @time: .2s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+.scale(@x: 1.2) {
+  transform: scale(@x);
+    -webkit-transform: scale(@x);
+    -moz-transform: scale(@x);
+    -o-transform: scale(@x);
+    -ms-transform: scale(@x);
+}
+
+.displayFlex(@val: flex) {
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: @val;
+}
+.flexAlignItems(@val: center) {
+  -webkit-box-align: @val;
+  -webkit-align-items: @val;
+  -ms-flex-align: @val;
+  align-items: @val;
+}
+.flexJustifyContent (@val: flex-start, @other: start) {
+  -webkit-box-pack: @other;
+  -moz-box-pack: @other;
+  -ms-flex-pack: @other;
+  -webkit-justify-content: @val;
+  justify-content: @val;
+}

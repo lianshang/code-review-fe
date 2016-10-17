@@ -1,0 +1,133 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+*/
+
+.header {
+  position: relative;
+  color: @color-text-main;
+  .px2rem(height, @height-nav-bar);
+  .px2rem(line-height, @height-nav-bar);
+  background-color: @color-header-main;
+  border-bottom: 1px solid @color-border-split;
+
+  // 因很多页面的返回按钮需要该类，这里补充上做兼容
+  .i-back {
+    position: absolute;
+    height: inherit;
+    .remWidth(@height-nav-bar);
+    text-align: center;
+    overflow: hidden;
+    line-height: inherit;
+  }
+
+  .pos-absolute {
+    position: absolute;
+    .remHeight(@height-nav-bar);
+    .px2rem(line-height, @height-nav-bar);
+  }
+
+  // 使用字体图标
+  .i-arrow-l {
+    .remFontSize(@font-size-nav-bar-title);
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  // 标题样式
+  h1 {
+    vertical-align: middle;
+    .px2rem(margin-left, @height-nav-bar);
+    .remFontSize(@font-size-nav-bar-title);
+    &.noindent {
+      text-indent: inherit;
+      text-align: center;
+      margin-left: 0;
+    }
+    &.title {
+      display: inline-block;
+    }
+    &.center {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  .act-search { //TODO, 文字+行内元素居中对齐问题,目前只有baseline是不差的.其他的都差几象素
+    position: absolute;
+    top: 0;
+    right: 0;
+    .px2rem(padding-right, 48);
+  }
+
+  .header-cover {
+    width: 100%;
+    .px2rem(height, @height-nav-bar);
+    position: absolute;
+    background-color: @color-main;
+    opacity: 0;
+  }
+
+  // header中带有搜索框的样式
+  .header-input {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    .remLineHeight(@height-search-input);
+    .remWidth(1000);
+    .remHeight(@height-search-input);
+    .px2rem(margin-top, 24);
+    .px2rem(border-radius, 10);
+    background-color: rgba(255, 255, 255, .36);
+    position: relative;
+    span {
+      display: inline-block;
+      &.i-scan {
+        float: right;
+        .remFontSize(60);
+        .remLineHeight(80);
+      }
+      &.i-search {
+        top: 4px;
+        .remFontSize(50);
+      }
+      &.i-scan, &.i-search {
+        .px2rem(padding-right, 26);
+        .px2rem(padding-left, 26);
+      }
+      &.header-text {
+        .remFontSize(36);
+      }
+    }
+  }
+}
+
+.header-fixed {
+  .px2rem(padding-top, @height-nav-bar);
+  .header {
+    position: fixed;
+    // position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 900;
+  }
+}
+
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .header-fixed {
+    .header {
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}

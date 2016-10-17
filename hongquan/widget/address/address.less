@@ -1,0 +1,142 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-address {
+  .weui_cell {
+    padding-top: 0;
+    padding-bottom: 0;
+    .px2rem(padding-left, 48);
+    .px2rem(padding-right, 48);
+    .remHeight(168);
+    .remFontSize(@font-size-text-main);
+    p {
+      .remWidth(870);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+  }
+
+  .address.weui_cell {
+    .remHeight(120);
+
+    label {
+      width: auto;
+      .im {
+        color: red;
+      }
+    }
+    .weui_input {
+      text-align: right;
+    }
+    .weui_switch {
+      float: right;
+    }
+  }
+
+  .weui_cell_ft:after {
+    .remHeight(25);
+    .remWidth(25);
+  }
+  .default-flag {
+    color: @color-main;
+    border: 1px solid @color-main;
+    border-radius: 7px;
+    padding: 2px;
+  }
+
+  .add {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    .remFontSize(@font-size-text-main);
+    z-index: 10;
+    .remHeight(120);
+    .remLineHeight(120);
+  }
+
+  .action, .delete {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+    .px2rem(margin-top, 48);
+    .remHeight(120);
+    .remLineHeight(120);
+    .remFontSize(@font-size-text-main);
+  }
+
+  .action {
+    bottom: 0;
+    width: 100%;
+  }
+
+  .delete {
+    background-color: white;
+    color: red;
+  }
+
+  .edit {
+    position: absolute;
+    top: 0;
+    right: 30px;
+  }
+
+  .weui_dialog {
+    width: 70%;
+  }
+  .weui_dialog_confirm .weui_dialog .weui_dialog_hd {
+    .weui_dialog_title {
+      .remFontSize(@font-size-text-main);
+    }
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .weui_dialog_confirm .weui_dialog_ft a {
+    .remHeight(120);
+    .remLineHeight(120);
+    .remFontSize(@font-size-text-main);
+    color: #515151;
+  }
+  .addresses {
+    .px2rem(margin-bottom, 130);
+  }
+
+  .tip {
+    color: @color-main;
+    .px2rem(padding-left, 40);
+    .px2rem(padding-right, 40);
+  }
+}
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .header {
+    .icon {
+      cursor: pointer;
+    }
+    .edit {
+      cursor: pointer;
+    }
+  }
+  .mod-address {
+    >.add {
+      width: @pc-width;
+    }
+    .addresses {
+      .weui_check_label {
+        .transition;
+        &:hover {
+          background: #ccc;
+        }
+      }
+    }
+  }
+}

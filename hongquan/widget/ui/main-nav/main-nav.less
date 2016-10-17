@@ -1,0 +1,51 @@
+.mod-main-nav {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  .px2rem(height, 147);
+  background-color: @color-footer-main;
+  border-top: 1px solid @color-border-split;
+  a {
+    float: left;
+    width: 25%;
+
+    text-align: center;
+    .px2rem(font-size, @font-size-main-nav);
+    ////color: @color-text-main;
+    &.active {
+      color: @color-main;
+    }
+
+    .icon {
+      display: block;
+      .px2rem(margin-top, 27);
+      .px2rem(margin-bottom, 14);
+    }
+  }
+  .nav-cart {
+    position: relative;
+    .total {
+      position: absolute;
+      left: 50%;
+      .px2rem(top, 0);
+      .px2rem(margin-left, 10);
+      .num {
+        display: inline-block;
+        .px2rem(width, 50);
+        .px2rem(height, 50);
+        .px2rem(line-height, 52);
+        text-align: center;
+        vertical-align: middle;
+        .px2rem(font-size, 26);
+
+        color: white;
+
+        background: #FF8347;
+        .px2rem(border-radius, 47);
+        .px2rem(border-bottom-left-radius, 0);
+      }
+    }
+  }
+}

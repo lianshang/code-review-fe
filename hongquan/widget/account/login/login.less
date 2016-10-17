@@ -1,0 +1,83 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-account-login {
+  position: relative;
+
+  .header {
+    .px2rem(margin-bottom, 85);
+  }
+
+  .login-box {
+    position: relative;
+    .remWidth(800);
+    margin: 0 auto;
+
+    .form-group {
+      position: relative;
+      width: 100%;
+      .remHeight(130);
+      .remLineHeight(130);
+      border-bottom: 1px solid @color-border-split;
+
+      label, i {
+        position: absolute;
+        top: -2px;
+      }
+      i.i-account-clear {
+        right:0;
+      }
+      input {
+        .px2rem(padding-left, 68);
+        .px2rem(padding-right, 60);
+        box-sizing: border-box;
+      }
+    }
+
+    .btn {
+      .remFontSize(@font-size-text-main);
+      .remHeight(120);
+      .remLineHeight(120);
+      &:disabled {
+        background: @color-main;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .submit {
+      .px2rem(margin-top, 90);
+    }
+    .regis {
+      display: block;
+      .px2rem(margin-top, 58);
+    }
+
+    a, a:visited {
+      color: @color-main;
+    }
+
+    a.forget {
+      display: block;
+      text-align: right;
+      .remFontSize(@font-size-text-sub);
+      color: @color-text-sub;
+      .px2rem(margin-top, 30);
+    }
+  }
+  .verify-code {
+    position: absolute;
+    right: 0;
+    .px2rem(top,23);
+    width: auto;
+    .px2rem(font-size,35);
+
+  }
+  button[disabled].verify-code{
+    color: #bcbcbc;
+    border-width: 1px;
+    background-color: transparent;
+  }
+}

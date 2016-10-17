@@ -1,0 +1,27 @@
+/**
+ * PC适配通用文件
+ * @author Gavin
+ * 2016-2-20
+ */
+// 全局适配
+html.adaptToPC {
+	body {
+		width: @pc-width;
+		margin: 0 auto;
+
+		// header
+		header {
+			width: @pc-width !important;
+			i:hover {
+				cursor: pointer;
+			}
+		}
+		// footer
+		footer.mod-main-nav {
+			width: @pc-width;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+}

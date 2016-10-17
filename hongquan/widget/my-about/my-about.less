@@ -1,0 +1,43 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-my-about {
+  .logo {
+    width: 100%;
+    text-align: center;
+    .px2rem(padding-top, 100);
+    .px2rem(padding-bottom, 100);
+  }
+  .content {
+    background: #fff;
+    .px2rem(padding, 30);
+    line-height: 1.7;
+    .remFontSize(@font-size-text-main);
+    height: 100%; //使字号正常的hack
+    .title {
+      .remFontSize(46);
+      font-weight: bold;
+      .px2rem(padding-bottom, 30);
+    }
+    .paragraph {
+      .px2rem(padding-bottom, 30);
+    }
+    .p-title {
+      font-weight: bold;
+    }
+  }
+  &.app {
+    .content {
+        .remFontSize(22);
+        .title {
+          .remFontSize(25);
+        }
+    }
+  }
+  .version {
+    .px2rem(padding-top, 20);
+  }
+
+}

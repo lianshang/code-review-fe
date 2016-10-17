@@ -1,0 +1,54 @@
+/**
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+.mod-shopping-detail {
+    text-align: center;
+    .header {
+      text-align: left;
+    }
+    height: 100%;
+    .top {
+        .px2rem(padding-top, 90);
+        .px2rem(padding-bottom, 100);
+        background: @color-text-white;
+    }
+    h2 {
+        .remFontSize(80);
+        .px2rem(padding-bottom, 60);
+        color: @color-text-red;
+    }
+    .em {
+        .remFontSize(@font-size-nav-bar-sub);
+        color: @color-main;
+        .px2rem(padding-bottom, 40);
+    }
+    .normal {
+        .remLineHeight(70);
+        &.pay {
+            .px2rem(padding-bottom, 20);
+        }
+    }
+    .bottom {
+        .px2rem(padding-top, @size-button);
+        .px2rem(padding-bottom, 200);
+        .px2rem(padding-left, 100);
+        .px2rem(padding-right, 100);
+    }
+    .tip {
+        text-align: left;
+        color: @color-main;
+    }
+    .btn {
+        .px2rem(margin-top, @size-button);
+        .remFontSize(@font-size-text-main);
+        .remHeight(120);
+        .remLineHeight(120);
+        width: 80%;
+        box-shadow: 2px 2px 5px @color-border-split;
+    }
+    .weui_btn_default {
+        border: 1px solid @color-border-split;
+        color: @color-main;
+    }
+}

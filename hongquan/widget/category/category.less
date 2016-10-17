@@ -1,0 +1,397 @@
+/**
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-category {
+  .header {
+    .page-title, .header-input {
+      display: inline-block;
+    }
+    .page-title {
+      .remFontSize(48);
+      .remWidth(160);
+      text-align: center;
+      color: @color-text-main;
+    }
+    .header-input {
+      .remWidth(880);
+      .px2rem(margin-right, 40);
+      color: #B8B8B8;
+      float: right;
+      background-color: #F1F1F1;
+    }
+  }
+  .cates {
+    -webkit-overflow-scrolling: touch;
+    float: left;
+    .remWidth(237);
+    .remFontSize(@font-size-text-main);
+    text-align: center;
+    background-color: #EDEDED;
+    .px2rem(padding-bottom, 147);
+    overflow: scroll;
+    > ul {
+      position: relative;
+    }
+    li {
+      .px2rem(padding-top, 35);
+      .px2rem(padding-bottom, 35);
+      border-top: 1px solid @color-border-split;
+      border-right: 1px solid @color-border-split;
+    }
+    .cates-lv2 {
+      display: none;
+      background-color: white;
+    }
+    .active {
+      background-color: white;
+      &.cate-lv1 {
+        position: relative;
+        font-weight: bold;
+        border-top: 1px solid @color-border-split;
+        border-right: none;
+        color: @color-text-main;
+        .remFontSize(@font-size-text-main);
+        &::after {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          border-width: 8px 8px;
+          border-style: solid;
+          border-color: @color-text-main transparent transparent;
+        }
+        &.shrink + .cates-lv2 {
+          display: none;
+        }
+        &.shrink {
+          &::after {
+            content: "";
+            display: none;
+          }
+        }
+      }
+      &.active-first-sub {  //如果第一个子单元被选中
+        .px2rem(padding-bottom, 36);
+        &.shrink {
+          .px2rem(padding-bottom, 35);
+          border-bottom: 1px solid @color-border-split;
+        }
+      }
+      + .cates-lv2 {
+        display: block;
+        .cate-lv2 {
+          .remFontSize(@font-size-text-sub);
+          border: none;
+          &.active {
+            color: @color-text-red;
+            font-weight: bold;
+            .remFontSize(@font-size-text-sub);
+            span {
+              display: block;
+              border-left: 6px solid @color-text-red;
+            }
+          }
+        }
+      }
+      &.noIcon::after {
+        display: none;
+      }
+    }
+  }
+  .items {
+    .px2rem(margin-left, 237);
+    .px2rem(padding-bottom, 147);
+    .remWidth(842);
+    position: relative;
+
+    .active-cate {
+      .remHeight(50);
+      .remLineHeight(50);
+      .px2rem(text-indent, 50);
+      .remFontSize(@font-size-text-sub);
+
+    }
+    .item-list {
+      -webkit-overflow-scrolling: touch;
+      overflow: auto;
+      height: 100%;
+    }
+    .brand-mask {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .2);
+      display: none;
+      z-index: 99;
+    }
+    .brandes {
+      width: 100%;
+      background: #fff;
+      position: relative;
+      z-index: 100; // 确保层级最大
+      .userSelect;
+      box-shadow: 0 5px 10px -5px rgba(0, 0, 0, .4);
+    }
+    .brandes .brand-common {
+      color: @color-text-main;
+      border: 1px solid #000;
+      cursor: pointer;
+      .remLineHeight(40);
+      .px2rem(margin-top, 20);
+      .px2rem(margin-left, 30);
+      .px2rem(margin-bottom, 20);
+      .px2rem(padding-top, 16);
+      .px2rem(padding-left, 28);
+      .px2rem(padding-bottom, 16);
+      .px2rem(padding-right, 28);
+      .px2rem(border-radius, 8);
+    }
+    .brandes .brand-btn {
+      width: 100%;
+      text-align: center;
+      color: @color-text-main;
+      cursor: pointer;
+      .remLineHeight(40);
+      .px2rem(margin-top, 20);
+      .px2rem(margin-bottom, 20);
+      .px2rem(padding-top, 16);
+      .px2rem(padding-bottom, 16);
+      .px2rem(border-radius, 8);
+    }
+    .brandes .brand-list {
+      width: 100%;
+      height: auto;
+      background: #fff;
+      position: absolute;
+      .px2rem(top, 112);
+      left: 0;
+      display: none;
+      border-top: 1px solid @color-border-split;
+      .px2rem(padding-bottom, 20);
+      .brand {
+        .brandes .brand-common;
+        margin-bottom: 0;
+        display: inline-block;
+        word-wrap: break-word;
+        word-break: break-all;
+        &.current {
+          background: #FFF1F1;
+          color: @color-text-red;
+          border-color: @color-text-red;
+        }
+      }
+    }
+    .loading {
+      text-align: center;
+      .remPadding(50);
+      color: @color-main;
+    }
+  }
+  .item {
+    position: relative;
+    .px2rem(min-height, 250); //
+    .remMargin(0); //
+    background-color: #ffffff;
+
+    .flag {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      display: block;
+      .remHeight(60);
+      .remLineHeight(60);
+      .remFontSize(@font-size-text-sub);
+      color: #ffffff;
+    }
+    .item-gift {
+      .gift {
+        border-top: none;
+      }
+    }
+    .item-content {
+      position: relative;
+      .px2rem(padding, 20);
+      .px2rem(padding-right, 40);
+      .px2rem(margin-left, 20);
+      padding-left: 0;
+      margin-right: 0;
+      overflow: hidden;
+      border-top: 1px solid @color-border-split;
+      .name {
+        line-height: 1.4;
+        .remFontSize(@font-size-text-sub);
+        height: auto;
+      }
+
+      img, .info {
+        display: inline-block;
+        // height: 100%;
+        height: 95%;  // 当100%的时候，有的图片会超出容器
+        .remWidth(210);  //
+      }
+
+      .info {
+        position: relative;
+        float: right;
+        .remWidth(520);  //
+        height: 100%;
+
+        .operation {
+          .remFontSize(@font-size-text-main);
+          line-height: 1.4;
+          color: @color-text-main;
+        }
+
+        del {
+          display: inline-block;
+          .px2rem(margin-top, 6);
+          .remFontSize(@font-size-text-sub); //
+          color: @color-text-sub;
+          visibility: visible;
+        }
+
+        .tags {
+          .px2rem(min-height, 50);
+          .tag {
+            .remFontSize(30);
+          }
+        }
+
+        .operation {
+          .current-price {
+            display: inline-block;
+            .remFontSize(40); //
+            top: 50%;
+            font-weight: bold;
+          }
+          .buy {
+            display: inline-block;
+            float: right;
+            .px2rem(margin-top, 10);
+            //&.empty {
+            //  .act-subtract,
+            //  .buy-count {
+            //    display: none;
+            //  }
+            //}
+          }
+        .sellout {
+          float: right;
+          .px2rem(margin-top, 24);
+          color: @color-text-sub;
+          vertical-align: middle;
+          text-align: center;
+        }
+          .buy-count {
+            display: inline-block;
+            .px2rem(min-width, 50);
+            .px2rem(padding-left, 10);
+            .px2rem(padding-right, 10);
+            vertical-align: middle;
+            text-align: center;
+          }
+        }
+
+        del:before,
+        .current-price:before {
+          content: '￥';
+        }
+      }
+    }
+  }
+  .tips {
+    display: block;
+    /* 该布局在UC浏览器下显示异常，经测试无效
+     * UC 支持display: -webkit-box属性
+     * 改为block
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    */
+    // .remHeight(80);
+    // .remLineHeight(80);
+    background: @color-text-red;
+    color: @color-text-white;
+    .remFontSize(36);
+    width: 100%;
+    .px2rem(padding, 20);
+    box-sizing: border-box;
+    .tips-l {
+      float: left;
+    }
+    .tips-r {
+      float: right;
+    }
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .gift {
+    border-top: 0;
+    .px2rem(padding-bottom, 20);
+  }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .mod-category {
+    section.cates {
+      width: 150px;
+      ul {
+        li {
+          .transition;
+          cursor: pointer;
+          &.cate-lv1:hover {
+            font-weight: bold;
+          }
+          &.cate-lv2:hover {
+            background: #fff;
+            color: #f5662d;
+          }
+        }
+      }
+    }
+    section.items {
+      width: 390px;
+      margin-left: 150px;
+      .item {
+        .transition;
+        &:hover {
+          img {
+            .scale;
+          }
+        }
+        .item-content {
+          > .item-link {
+            float: left;
+            overflow: hidden;
+            width: 27%;
+            height: 100%;
+          }
+          > .info {
+            float: left;
+            width: 73%;
+            //margin-left: .3rem
+          }
+        }
+      }
+      .item-content {
+        .buy {
+          i {
+            .userSelect;
+          }
+        }
+      }
+    }
+  }
+}

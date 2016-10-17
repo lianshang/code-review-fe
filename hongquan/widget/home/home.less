@@ -1,0 +1,389 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/tool.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+@height-banner: 480;
+
+.mod-home {
+  .header {
+    border: none;
+  }
+  .px2rem(padding-bottom, @height-main-menu);
+  -webkit-overflow-scrolling: touch;
+
+  // 头部搜索
+  .i-search {
+    color: #fff;
+    .remFontSize(59);
+    line-height: inherit;
+  }
+  .header h1 {
+    // display: -webkit-flex;
+    // display: flex;
+    // align-items: center;
+  }
+  .logo {
+    // align-self: center;
+    .remWidth(120);
+    // .remHeight(62);
+  }
+
+  // 轮播
+  .slide {
+    .px2rem(height, @height-banner);
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // 品类
+  .cates {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    .px2rem(padding-bottom, 30);
+    ul {
+      li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        .px2rem(margin-top, 30);
+        a {
+          display: block;
+          width: 100%;
+          img {
+            display: block;
+            margin: 0 auto;
+            .px2rem(width, 160);
+            .px2rem(height, 160);
+          }
+          .cate-text {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+            .px2rem(font-size, @font-size-text-main);
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+
+  // 公告
+  .public-notice {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    @notice-height: 126;
+    .remHeight(@notice-height);
+    border-top: 1px solid @color-border-split;
+    .title {
+      float: left;
+      box-sizing: border-box;
+      border-right: 1px solid @color-border-split;
+      .px2rem(margin-top, 24);
+      .remHeight(75);
+      .remLineHeight(75);
+      .remWidth(251);
+      text-align: center;
+      img {
+        .remWidth(168);
+      }
+
+    }
+    .notice-list {
+      box-sizing: border-box;
+      .px2rem(margin-left, 251);
+      .remHeight(@notice-height);
+      overflow: hidden;
+      li {
+        box-sizing: border-box;
+        line-height: inherit;
+        .remLineHeight(@notice-height);
+        .remHeight(@notice-height);
+        .px2rem(padding-right, 20);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .tag {
+          .px2rem(margin-left, 34);
+          .px2rem(padding,15);
+          .px2rem(border-radius,8);
+          .px2rem(font-size,30);
+          color: #FFFFFF;
+          vertical-align: top;
+        }
+        a {
+          .px2rem(padding-left, 20);
+        }
+      }
+    }
+  }
+
+  // banner列表
+  .banner-list {
+    a {
+      display: block;
+      .px2rem(margin, @size-margin-block);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    img {
+      width: 100%;
+      .px2rem(height, @height-banner);
+    }
+  }
+
+  // 商品分组
+  .group {
+    .px2rem(margin-top, @size-margin-block);
+    -webkit-tap-highlight-color: transparent;
+    .title {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      .remHeight(@size-line-height);
+      .remLineHeight(@size-line-height);
+      .px2rem(padding-left, @size-margin-block);
+      .px2rem(padding-right, @size-margin-block);
+      .title-primary {
+        flex-grow: 1;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+      }
+      background-color: #fff;
+      .i-arrow-r {
+        line-height: inherit;
+      }
+    }
+  }
+
+  //优惠券弹框
+  .coupon-item.weui_cells {
+    .weui_mask {
+      z-index: 999;
+    }
+    .citems-container {
+      position: fixed;
+      .px2rem(margin-left, 96);
+      .px2rem(margin-right, 96);
+      .px2rem(padding-top, 400);
+      background: url("img/coupon_background.png") no-repeat;
+      background-size: 100% auto;
+      .px2rem(border-radius, 70);
+      .px2rem(max-height, 700);
+
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translate(0%, -50%);
+      transform: translate(0%, -50%);
+      z-index: 999;
+      .citems-bg {
+        .px2rem(padding-right, 87);
+        .px2rem(padding-left, 87);
+        .px2rem(padding-bottom, 72);
+        background-color: #fd4b37;
+        .px2rem(border-radius, 70);
+        border-radius: 0.7rem;
+        box-shadow: 0px .1rem 0px 0px #6d0808;
+      }
+      .citems-close {
+        position: absolute;
+        .px2rem(right, 20);
+        .px2rem(top, 20);
+      }
+      .citems-tips {
+        p {
+          position: absolute;
+          .px2rem(font-size, 40);
+          color: #ffffff;
+          .px2rem(top, 330);
+          .px2rem(right, 40);
+        }
+      }
+      .citems {
+        overflow: auto;
+        overflow-x: hidden;
+        .px2rem(max-height, 700);
+        .weui_cell {
+          &:before {
+            left: 0;
+            border: none;
+          }
+        }
+        .citem {
+          color: @color-text-main;
+          .px2rem(height, 192);
+          .px2rem(font-size, 30);
+          .px2rem(padding-top, 20);
+          .px2rem(padding-bottom, 20);
+          .px2rem(padding-left, 35);
+          .px2rem(padding-right, 35);
+          .px2rem(margin-bottom, 10);
+          background: #fff;
+          border-radius: 10px;
+          border: 0;
+          .sep {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 0;
+            .px2rem(border-top-width, 20);
+            border-style: solid;
+            border-color: @color-text-red;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          p {
+            .px2rem(padding-bottom, 6);
+            &:first-child {
+              .px2rem(font-size, 42);
+              .px2rem(padding-bottom, 13);
+              font-weight: bolder;
+            }
+            &:last-child {
+              .px2rem(padding-bottom, 0);
+            }
+            .remFontSize(28);
+          }
+
+          .money {
+            // font-weight: bold;
+            display: block;
+            width: 38%;
+            color: @color-text-red;
+            .px2rem(font-size, 120);
+            font-weight: bolder;
+            &:before {
+              content: "￥";
+              .remFontSize(50);
+              font-weight: bolder;
+            }
+          }
+          .info {
+            width: 62%;
+            p {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+@height-banner-pc: 213px;
+html.adaptToPC {
+  .mod-home {
+    // 轮播
+    .slide {
+      height: @height-banner-pc;
+      .dots {
+        .dot {
+          cursor: pointer;
+        }
+      }
+    }
+
+    // banner列表
+    .banner-list {
+      .banner-item {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+        img {
+          width: 100%;
+          height: @height-banner-pc;
+        }
+      }
+    }
+
+    // 商品
+    .items {
+      overflow: hidden;
+      .px2rem(padding-bottom, 30);
+      clear: both;
+      > div {
+        overflow: hidden;
+        .item {
+          margin-left: 0;
+          margin-bottom: 0;
+          margin-right: 0;
+          .transition;
+          img {
+            .transition;
+          }
+          &:hover {
+            img {
+              .scale;
+            }
+          }
+          .buy {
+            i {
+              .userSelect;
+            }
+          }
+          .item-link {
+            float: left;
+            height: 100%;
+          }
+          .info {
+            float: left;
+            width: 388px;
+            .px2rem(margin-left, 50);
+          }
+        }
+      }
+
+      // 商品分组
+      .group {
+        clear: both;
+        .title {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .coupon-item.weui_cells {
+      .weui_mask {
+        width: 540px;
+        right: 0;
+        margin: 0 auto;
+      }
+      .citems-container {
+        width: 400px;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+  }
+}

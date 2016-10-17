@@ -1,0 +1,140 @@
+@import url("/widget/common/css-base/src/var.less");
+@import url("/widget/common/css-base/src/tool.less");
+
+//@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+//.px2rem(@name, @px){
+//    @{name}: @px / @baseFontSize * 1rem;
+//}
+.px2rem(@name, @px){
+    @{name}: @px*1px;  //版本1,还是px方案
+}
+
+
+body {
+  .px2rem(font-size, 40);
+  //font-size: 1.5333333333333rem;  /* 40px */
+  color: #515151;
+  background: #f0f0f0;
+  line-height: 1.6;
+}
+h1 {
+  .px2rem(font-size, 100);
+}
+h2 {
+  .px2rem(font-size, 60);
+}
+a {
+  color: #515151;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: #f5662d;
+  }
+}
+
+
+.status-bar {
+  color: white;
+  font-size: 100px;
+  line-height: 168px;
+  text-indent: 15px;
+  background: #ff8347;
+  //height: 16.8rem;
+  .px2rem(height, 168);
+  //background: #ff8347 url("./img/about_logo.png") 0 0 no-repeat ;
+  //background-size: auto 168px;
+}
+
+
+.sub-font {
+  .px2rem(font-size, 34);
+  //font-size: 1.3033333333333rem;  /* 34px */
+}
+.top-bar {
+  .px2rem(height, 55);
+
+  //height: 5.5rem;
+  color: #9e9e9e;
+  background: #f5662d;
+}
+
+
+.pic {
+  width: 100%;
+  img {
+    margin: 0 auto;
+    height: 750px;
+  }
+}
+
+
+
+.info {
+  padding: 30px;
+
+  .init-price:before,
+  .promo-price:before {
+    content: '￥';
+    display: inline-block;
+  }
+  .init-price {
+    font-size: 34px;
+    color: gray;
+    text-decoration: line-through;
+  }
+  .promo-price {
+    font-size: 50px;
+    color: #f5662d;
+  }
+}
+
+.detail {
+  padding: 30px;
+  margin-bottom: 200px;
+}
+
+
+.list {
+  .box {
+    //.px2rem(width, 160);
+    //.px2rem(margin-left, 120);
+    //.px2rem(margin-right, 120);
+    border: solid 1px #888;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: white;
+
+
+  }
+}
+
+.main-menu {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  background: white;
+
+  border-top: 1px solid gray;
+  .px2rem(height, 147);
+  //height: 14.7rem;
+
+  .menu {
+    font-weight: bold;
+    display: inline-block;
+    width: 160px;
+    text-indent: 0.5em;
+    .px2rem(height, 147);
+    .px2rem(line-height, 147);
+
+    &.link {
+      color: #515151;
+    }
+    &.active {
+      color: #ff8347;
+    }
+  }
+}

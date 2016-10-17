@@ -1,0 +1,62 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-account-pass {
+  position: relative;
+
+  .header {
+    .px2rem(margin-bottom, 85);
+  }
+
+  .pass-box {
+    position: relative;
+    .remWidth(800);
+    margin: 0 auto;
+
+    .form-group {
+      position: relative;
+      width: 100%;
+      .remHeight(130);
+      .remLineHeight(130);
+      border-bottom: 1px solid @color-border-split;
+
+      label, i {
+        position: absolute;
+        top: -2px;
+      }
+      i.i-account-clear {
+        right:0;
+      }
+      input {
+        .px2rem(padding-left, 68);
+        .px2rem(padding-right, 60);
+        box-sizing: border-box;
+      }
+    }
+
+    .btn {
+      .remFontSize(@font-size-text-main);
+      .remHeight(90);
+      .remLineHeight(90);
+    }
+
+    .submit {
+      .px2rem(margin-top, 90);
+      &:disabled {
+        background: @color-main;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .regis {
+      display: block;
+      .px2rem(margin-top, 48);
+    }
+
+    a, a:visited {
+      color: @color-main;
+    }
+  }
+}

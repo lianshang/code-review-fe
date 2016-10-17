@@ -1,0 +1,51 @@
+module.exports = {
+    skeleton: [
+        '<header class="header">',
+            '<h1>我的</h1>',
+        '</header>',
+
+        '<section class="main">',
+        '</section>',
+    ].join(''),
+    orderStatus: [
+      '<div class="order-status">',
+        '{{each status as status}}',
+          '<span data-status="{{status.status}}">{{status.status_name}}{{if status.count != 0}}<i>{{status.count > 99 ? "99+" : status.count}}</i>{{/if}}</span>',
+        '{{/each}}',
+      '</div>'
+    ].join(''),
+    main: [
+        '<div class="group">',
+            '<i class="icon i-my-account"></i>账户<span class="right">{{if account}}{{account}}{{else}}未登录{{/if}}</span>',
+        '</div>',
+        '{{each nav as group}}',
+            '<ul class="group">',
+                '{{each group as item}}',
+                    '<li {{if item.class}} class="{{item.class}}"{{/if}}>',
+                        '{{if item.url}}',
+                            '<a href="{{item.url}}">',
+                        '{{/if}}',
+                                '<i class="icon i-my-{{item.icon}}"></i>',
+                                '{{item.name}}',
+                        '{{if item.url}}',
+                            '<span class="right">',
+                                '{{if item.tips}}',
+                                '<span class="tips">{{item.tips}}</span>',
+                                '{{/if}}',
+                                '<i class="iconf i-arrow-r"></i>',
+                            '</span>',
+                            '</a>',
+                        '{{/if}}',
+                    '</li>',
+                '{{/each}}',
+            '</ul>',
+        '{{/each}}',
+        '{{if account}}',
+            '<div class="group operation logout">',
+                '退出当前账号',
+            '</div>',
+        '{{else}}',
+            '<a class="group operation login" href="/account/user/login?redirectUrl={{redirectUrl}}">登录</a>',
+        '{{/if}}'
+    ].join('')
+};

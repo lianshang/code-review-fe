@@ -1,0 +1,63 @@
+/**
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+.mod-shopping-history {
+    .hide {
+        display: none;
+    }
+    .history {
+        .item {
+            .item-content {
+                .px2rem(margin-right, 28);
+                .px2rem(margin-left, 15);
+                .px2rem(padding-top, 20);
+                .px2rem(padding-bottom, 20);
+                .info {
+                    .remWidth(740);
+                    .buy-times {
+                        display: inline-block;
+                        .remFontSize(@font-size-text-sub);
+                        color: @color-text-sub;
+                    }
+                    .price-lower {
+                        display: inline-block;
+                        .remFontSize(@font-size-text-sub);
+                        color: @color-main;
+                        .px2rem(margin-left, 10);
+                    }
+                    del {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .nodata {
+            text-align: center;
+            // background: #fafafa;
+            .icon {
+              .px2rem(margin-top, 340);
+              .px2rem(margin-bottom, 180);
+            }
+            .p1 {
+              color: @color-text-main;
+              .remFontSize(@font-size-nav-bar-sub);
+              .px2rem(margin-bottom, 15);
+            }
+            .p2 {
+              color: @color-text-sub;
+              .remFontSize(@font-size-text-sub);
+              .px2rem(margin-bottom, 60);
+            }
+            .weui_btn_default {
+              .remWidth(760);
+              .remHeight(90);
+              .remLineHeight(90);
+              color: @color-main;
+              border: 1px solid @color-main;
+              .remFontSize(@font-size-text-sub);
+            }
+          }
+    }
+}

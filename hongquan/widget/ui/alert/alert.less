@@ -1,0 +1,51 @@
+.ls-alert-dialog {
+  .weui_mask {
+    z-index: 1000;
+  }
+  .weui_dialog {
+    z-index: 1003;
+    border-radius: 6px;
+    .weui_dialog_title {
+      font-size: 34px;
+    }
+    .weui_dialog_bd {
+      font-size: 30px;
+      .weui_cells {
+        font-size: 34px;
+      }
+    }
+    .weui_dialog_ft {
+      font-size: 34px;
+      line-height: 84px;
+      margin-top: 40px;
+    }
+  }
+}
+html.adaptToPC{
+  .ls-alert-dialog {
+    .weui_mask {
+      z-index: 1000;
+    }
+    .weui_dialog {
+      z-index: 1003;
+      width: 360px;
+      .px2rem(border-radius, 6);
+      .weui_dialog_title {
+        .px2rem(font-size, 34);
+      }
+      .weui_dialog_bd {
+        font-size: inherit;
+        .weui_cells {
+          font-size: inherit;
+          margin-top: 0;
+        }
+      }
+      .weui_dialog_ft {
+        cursor: pointer;
+        .px2rem(font-size, 34);
+        .px2rem(line-height, 84);
+        .px2rem(margin-top, 40);
+      }
+    }
+  }
+}

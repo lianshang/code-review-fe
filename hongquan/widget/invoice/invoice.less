@@ -1,0 +1,62 @@
+/**
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-invoice {
+    .hide {
+        display: none;
+    }
+    .weui_cells {
+        .remFontSize(@font-size-text-main);
+        .px2rem(margin-top, 30);
+    }
+    .weui_cells_title {
+        .remFontSize(@font-size-text-main);
+        .px2rem(padding-left, 40);
+    }
+    .weui_cell {
+        padding-top: 0;
+        padding-bottom: 0;
+        .px2rem(padding-left, 40);
+        .px2rem(padding-right, 40);
+        .remHeight(120);
+    }
+    .weui_icon_checked:before {
+        .remFontSize(@font-size-nav-bar-sub);
+    }
+    .weui_input {
+        text-align: right;
+    }
+    .btn-confirm {
+        width: 80%;
+        .px2rem(margin-top, @size-button);
+        .px2rem(margin-bottom, 64);
+        .remFontSize(@font-size-text-main);
+        .remHeight(@size-line-height);
+        .remLineHeight(@size-line-height);
+    }
+    .tip,
+    .vat {
+        width: 90%;
+        margin: auto;
+        color: @color-main;
+    }
+    .tip {
+        .px2rem(padding-bottom, 100);
+    }
+    .vat {
+        display: none;
+        .remFontSize(@font-size-text-main);
+        height: 100%;
+        .px2rem(margin-top, @size-button);
+    }
+    .type-vat {
+        .vat {
+            display: block;
+        }
+        .normal {
+            display: none;
+        }
+    }
+}

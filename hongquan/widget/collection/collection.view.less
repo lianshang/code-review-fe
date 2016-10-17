@@ -1,0 +1,134 @@
+@disabled-color: rgba(255, 255, 255, 0.5);
+.mod-collection {
+  .header {
+    z-index: 1000;
+    padding: 0;
+    .px2rem(padding-right, 50);
+    .edit, .done {
+      cursor: pointer;
+      .remFontSize(48);
+      &.disabled {
+        color: @disabled-color;
+      }
+    }
+  }
+  .nodata {
+    text-align: center;
+    display: none;
+    i {
+      .px2rem(margin-top, 300);
+      .px2rem(margin-bottom, 80);
+    }
+    .p1 {
+      .colorTextMain;
+      .remFontSize(@font-size-nav-bar-sub);
+      .px2rem(margin-bottom, 15);
+    }
+    .p2 {
+      color: @color-text-sub;
+      .remFontSize(@font-size-text-sub);
+      .px2rem(margin-bottom, 60);
+    }
+    .weui_btn_default {
+      .remWidth(760);
+      .remHeight(90);
+      .remLineHeight(90);
+      .remFontSize(@font-size-text-sub);
+      color: @color-main;
+      border: 0 none;
+    }
+  }
+  .collections {
+    .item {
+      min-height: inherit;
+      .item-content {
+        .px2rem(padding-top, 20);
+        .px2rem(padding-bottom, 20);
+        .px2rem(margin-left, 28);
+        .px2rem(margin-right, 28);
+        .info {
+          .px2rem(width, 740);
+          .name {
+            height: auto;
+          }
+        }
+      }
+      &.weui_cells_checkbox {
+        &:nth-last-child(1) {
+          .px2rem(margin-bottom, 150);
+        }
+        .weui_cell_hd {
+          float: left;
+          padding-right: 0;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          .weui_icon_checked:before {
+            .remFontSize(60);
+            .px2rem(margin-left, 40);
+            .px2rem(margin-right, 40);
+            .remLineHeight(300);
+          }
+          .weui_cell {
+            padding: 0;
+            -moz-user-select:none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          }
+        }
+        .item-content {
+          margin-right: 0;
+          margin-left: 0;
+          .info {
+            .px2rem(width, 630);
+          }
+          .buy {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .item-to-end {
+    display: none;
+  }
+  .sub-btn {
+    z-index: 999;
+    position: fixed;
+    .px2rem(bottom, -120);
+    opacity: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    background: @color-main;
+    text-align: center;
+    .remHeight(120);
+    .remFontSize(40);
+    .remLineHeight(120);
+    transition: all 0.5s ease;
+    &.animate {
+      bottom: 0;
+      opacity: 1;
+    }
+    &.disabled {
+      color: @disabled-color;
+    }
+  }
+}
+
+// PC 适配
+html.adaptToPC {
+  .mod-collection {
+    header {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .sub-btn {
+      width: @pc-width;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      &.disabled {
+        color: @disabled-color;
+      }
+    }
+  }
+}

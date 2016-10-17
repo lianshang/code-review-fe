@@ -1,0 +1,47 @@
+.ls-confirm-dialog {
+  .weui_mask {
+    z-index: 1000;
+  }
+  .weui_dialog {
+    z-index: 1003;
+    border-radius: 6px;
+    .weui_dialog_title {
+      font-size: 34px;
+    }
+    .weui_dialog_bd {
+      font-size: 30px;
+      padding-left: 40px;
+    }
+    .weui_dialog_hd {
+      padding: 1.2em 40px 0.5em !important;
+    }
+    .weui_dialog_ft {
+      font-size: 34px;
+      line-height: 84px;
+      margin-top: 40px;
+    }
+  }
+}
+html.adaptToPC {
+  .ls-confirm-dialog {
+    .weui_mask {
+      z-index: 1000;
+    }
+    .weui_dialog {
+      z-index: 1003;
+      width: 360px;
+      border-radius: 6px;
+      .weui_dialog_title {
+        font-size: inherit;
+      }
+      .weui_dialog_bd {
+        font-size: inherit;
+      }
+      .weui_dialog_ft {
+        font-size: inherit;
+        line-height: 42px;
+        margin-top: 40px;
+      }
+    }
+  }
+}

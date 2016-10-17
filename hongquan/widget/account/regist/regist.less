@@ -1,0 +1,180 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-account-regist {
+  position: relative;
+
+  .header {
+    .px2rem(margin-bottom, 85);
+  }
+
+  .weui_cell {
+    padding-top: 0;
+    padding-bottom: 0;
+    .px2rem(padding-left, 48);
+    .px2rem(padding-right, 48);
+    .remHeight(120);
+    .remFontSize(@font-size-text-main);
+
+    label {
+      width: auto;
+    }
+    .weui_input {
+      text-align: right;
+    }
+    .location.weui_input {
+      display: block;
+      text-align: left;
+      .remWidth(800);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .next {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+    .remFontSize(@font-size-text-main);
+    z-index: -1; // 某些浏览器的fixed定位元素在键盘被调起时, 由于窗口变小会遮挡输入区
+    .remHeight(120);
+    .remLineHeight(120);
+    &:disabled {
+      background: @color-main;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .regist-box {
+    position: relative;
+    .remWidth(800);
+    margin: 0 auto;
+
+    .form-group {
+      position: relative;
+      width: 100%;
+      .remHeight(130);
+      .remLineHeight(130);
+      border-bottom: 1px solid @color-border-split;
+
+      label, i {
+        position: absolute;
+        top: -2px;
+      }
+
+      input {
+        .px2rem(padding-left, 68);
+        .px2rem(padding-right, 60);
+        box-sizing: border-box;
+      }
+    }
+
+    .submit-regist {
+      .px2rem(margin-top, 90);
+      &:disabled {
+        background: @color-main;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .verify-code {
+      display: block;
+      .px2rem(margin-top, 48);
+    }
+  }
+
+  .success-p1 {
+    .px2rem(margin-top, 250);
+    .px2rem(margin-bottom, 90);
+    text-align: center;
+  }
+  .success-p2 {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .success-btn {
+    width: 80%;
+    .px2rem(margin-top, 90);
+  }
+  .btn {
+    .remFontSize(@font-size-text-main);
+    .remHeight(90);
+    .remLineHeight(90);
+  }
+  .agreement {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    .px2rem(bottom, 90);
+    left: 0;
+
+    .regist-agree {
+      color: @color-text-link;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .main {
+    background: #fff;
+    .px2rem(padding, 30);
+    line-height: 1.7;
+    height: 100%; //使字号正常的hack
+    dt {
+      .remFontSize(46);
+      font-weight: bold;
+      .px2rem(padding-top, 30);
+      .px2rem(padding-bottom, 30);
+    }
+    dd {
+      .remFontSize(@font-size-text-main);
+      .px2rem(padding-bottom, 30);
+      p {
+        text-indent: 2em;
+      }
+    }
+  }
+  &.account-regist-agree {
+    .header {
+      margin-bottom: 0
+    }
+  }
+
+  .tip {
+    color: @color-main;
+    .px2rem(padding-left, 40);
+    .px2rem(padding-right, 40);
+  }
+}
+
+html {
+  // 微信下会出现半部分白色部分
+  // 先这样解决吧
+  min-height: 100%;
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .mod-account-regist {
+    .next {
+      width: 540px;
+      margin: 0 auto;
+      position: static;
+      left: 0;
+      right: 0;
+      margin-top: .5rem;
+      &:after {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+.mod-my-order-comment {
+  position: relative;
+  .px2rem(padding-bottom, 150);
+  .i-arrow-r{
+    .px2rem(margin-left, 30);
+    &:before {
+      background-size: 80% 80%;
+    }
+  }
+  .vm {
+    vertical-align: middle;
+    color: @color-text-main;
+  }
+
+
+  .evaluate-pop {
+    .evaluate-text{
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    .el-tags {
+      .px2rem(font-size, 40);
+      .el-taglist {
+        &::before {
+          border-top: 0;
+        }
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: auto !important;
+        .el-btn {
+          display: inline-block;
+          .px2rem(padding-top, 16);
+          .px2rem(padding-left, 28);
+          .px2rem(padding-bottom, 16);
+          .px2rem(padding-right, 28);
+          .px2rem(margin-right, 30);
+          .px2rem(margin-top, 20);
+          border: 1px solid #f45341;
+          border-radius: 10px;
+          &.selected {
+            background: #F45341;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .el-move-margin {
+      .el-textarea {
+        .px2rem(font-size, 40);
+        padding: .4rem;
+      }
+    }
+  }
+  // 底部信息
+  .summary {
+    position: fixed;
+    background-color: #ff8347;
+    width: 100%;
+    .px2rem(bottom, 0);
+    .remHeight(147);
+    .remLineHeight(147);
+    z-index: 100;
+    .sub-evaluate {
+      background: inherit;
+      border: none;
+      display: block;
+      width: 100%;
+      .remHeight(147);
+      .px2rem(font-size, 40);
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+  .info {
+
+    .weui_cell{
+      &:before {
+        border-top: none;
+      }
+    }
+    .pay{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      background-color: #FFF;
+      .remHeight(200);
+      .title {
+        color: @color-text-sub;
+        .px2rem(font-size, 40);
+      }
+      .money {
+        color: #F45341;
+        .px2rem(font-size, 67);
+        .px2rem(margin-top, 20);
+        &:before {
+          content: "￥";
+        }
+      }
+
+    }
+    // 订单信息
+    .order-info {
+      .remFontSize(40);
+      .order-detail {
+        .remHeight(140);
+        .px2rem(padding-top, 38);
+        .px2rem(padding-bottom, 38);
+
+        .weui_cell_primary {
+          height: 100%;
+          .item-img, .item-desc {
+            float: left;
+            display: inline-block;
+            height: 100%;
+            line-height: 1.7;
+          }
+
+          .item-img {
+            .px2rem(margin-left, 10);
+            &:first-child {
+              .px2rem(margin-left, 0);
+            }
+            img {
+              height: 100%;
+            }
+          }
+
+          .item-desc {
+            p {
+              .px2rem(padding-left, 20);
+              overflow: hidden;
+              height: 100%;
+              .remWidth(600);
+            }
+          }
+        }
+      }
+
+    }
+    .trans-info {
+      border-top: 1px solid @color-border-split;
+      .px2rem(padding-top,30);
+      .px2rem(padding-bottom,30);
+      .remHeight(160);
+      .weui_cell_primary {
+        //.px2rem(font-size, 50);
+      }
+      .weui_cell_ft {
+        color: @color-text-sub;
+        .car-number {
+          color: @color-text-main;
+        }
+      }
+
+    }
+  }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .mod-my-order-comment {
+    .summary {
+      width: @pc-width;
+    }
+  }
+}

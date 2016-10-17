@@ -1,0 +1,200 @@
+/**
+* @require "home:widget/common/css-base/src/icon.less"
+* @require "home:widget/common/css-base/src/weui.css"
+* @require "home:widget/ui/header/header.less"
+*/
+
+.mod-my-order {
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  // .header {
+  //     position: fixed;
+  //     z-index: 100;
+  //     top: 0;
+  //     width: 100%;
+  // }
+  .loading {
+      text-align: center;
+      padding: 0.5rem;
+  }
+  .vm {
+    vertical-align: middle;
+  }
+  .hide {
+    display: none;
+  }
+  .fixed {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    .px2rem(top, @height-nav-bar);
+    .status {
+      overflow: hidden;
+      background: #fff;
+      color: @color-text-sub;
+      text-align: center;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+      span {
+        .remHeight(120);
+        .remLineHeight(120);
+        cursor: pointer;
+        position: relative;
+        float: left;
+        width: 20%;
+        &.active {
+          color: @color-text-red;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            .remWidth(128);
+            .remHeight(6);
+            .px2rem(top, 114);
+            .px2rem(margin-left, -64);
+            background: @color-text-red;
+          }
+        }
+      }
+    }
+  }
+
+  .nodata {
+    text-align: center;
+    .i-orders {
+      .px2rem(margin-top, 300);
+      .px2rem(margin-bottom, 80);
+      &:before {
+        .px2rem(width, 327);
+        .px2rem(height, 327);
+      }
+    }
+    p {
+      color: @color-text-main;
+      .remFontSize(@font-size-nav-bar-sub);
+      .px2rem(margin-bottom, 15);
+    }
+  }
+  .i-arrow-r{
+    .px2rem(margin-left, 30);
+    &:before {
+      background-size: 80% 80%;
+    }
+  }
+  .list {
+    .px2rem(margin-top, 140);
+    // overflow: auto;
+    // -webkit-overflow-scrolling: touch;
+  }
+  .end {
+    text-align: center;
+    color: @color-text-sub;
+    .px2rem(line-height, 150);
+  }
+  .pay-total {
+    color: @color-text-red;
+    .order-status {
+      display: inline-block;
+      .remHeight(120);
+      .remLineHeight(120);
+      border-right: 1px solid #D2D2D2;
+      .px2rem(padding-right, 30);
+      .px2rem(margin-right, 30);
+    }
+  }
+  .pay-status {
+    color: @color-text-sub;
+  }
+  .operation {
+    .px2rem(padding, 10);
+    .px2rem(margin-left, 40);
+    color: @color-text-main;
+    background-color: #fff;
+    border: 1px solid @color-text-main;
+    border-radius: 7px;
+    .remFontSize(@font-size-text-main);
+  }
+  h1 {
+    display: inline-block;
+  }
+
+  .weui_cells_access {
+    border-bottom: 10px solid @color-main;
+  }
+
+  .weui_cells {
+    .remFontSize(@font-size-text-main);
+    .px2rem(margin-top, 20);
+
+    .weui_cell {
+      padding-top: 0;
+      padding-bottom: 0;
+      .px2rem(padding-left, 40);
+      .px2rem(padding-right, 40);
+      .remHeight(120);
+      &:first-child {
+        border-bottom: 1px solid #D2D2D2;
+      }
+      &:before {
+        left: 0;
+      }
+    }
+    .small-cell.weui_cell {
+      .remHeight(80);
+      .remFontSize(@font-size-text-sub);
+    }
+
+    .weui_cell_ft:after {
+      .remHeight(25);
+      .remWidth(25);
+    }
+
+
+  }
+
+  // 订单信息
+  .order-info {
+
+    .order-detail {
+      .remHeight(140);
+      .px2rem(padding-top, 30);
+      .px2rem(padding-bottom, 30);
+
+      .weui_cell_primary {
+        height: 100%;
+        .item-img, .item-desc {
+          float: left;
+          display: inline-block;
+          height: 100%;
+          line-height: 1.7;
+        }
+
+        .item-img {
+          .px2rem(margin-left, 10);
+          &:first-child {
+            .px2rem(margin-left, 0);
+          }
+          img {
+            height: 100%;
+          }
+        }
+
+        .item-desc {
+          p {
+            .px2rem(padding-left, 20);
+            overflow: hidden;
+            height: 100%;
+            .remWidth(600);
+          }
+        }
+      }
+    }
+
+
+  }
+
+}
+html.adaptToPC {
+  .mod-my-order .fixed {
+    width: @pc-width;
+  }
+}

@@ -1,0 +1,106 @@
+/**
+* @require "home:widget/ui/header/header.less"
+* @require "home:widget/common/css-base/src/tool.less"
+*/
+
+.mod-activity-detail {
+  .activity-info {
+    .px2rem(margin-bottom,20);
+    .img {
+      display: block;
+      .px2rem(width, 1080);
+      .px2rem(height, 423);
+      .px2rem(margin-bottom,20);
+    }
+    .brief-info-wrap {
+      background-color: white;
+      .px2rem(padding-top, 30);
+      .px2rem(padding-bottom, 30);
+    }
+    .brief-info {
+      .px2rem(margin, 30);
+      margin-top: 0;
+    }
+    .brief-info:last-child {
+      margin-bottom: 0;
+    }
+
+    .name,
+    .value {
+      float: left;
+    }
+    .name {
+      .px2rem(width, 200);
+    }
+    .value {
+      .px2rem(width, 750);
+    }
+  }
+  .relative-activity {
+    h2{
+      font-size: 0.4rem;
+      padding-bottom: 0.42rem;
+    }
+    .px2rem(margin, 30);
+
+    li{
+      float: left;
+      //.px2rem(margin, 30);
+      .px2rem(width, 495);
+      .px2rem(height, 204);
+    }
+    a,img {
+      display: block;
+      .px2rem(width, 495);
+      .px2rem(height, 204);
+    }
+  }
+}
+
+// PC适配
+// @author Gavin
+// 2016-2-23
+html.adaptToPC {
+  .mod-activity-detail {
+    .activity-info {
+      margin-right: 0;
+      margin-left: 0;
+      width: 100%;
+      .brief-info-wrap {
+        margin-top: .3rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .items {
+      .item {
+        margin: .3rem 0 0 0;
+        img {
+          .transition;
+        }
+        &:hover {
+          img {
+            .scale;
+          }
+        }
+        .item-link {
+          float: left;
+          overflow: hidden;
+          height: 100%;
+        }
+        .info {
+          float: left;
+          width: 380px;
+          margin-left: .5rem;
+          .buy {
+            i {
+              .userSelect;
+            }
+          }
+        }
+      }
+    }
+  }
+}
