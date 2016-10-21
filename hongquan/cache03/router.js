@@ -3,6 +3,7 @@ var helper   = require('home:widget/ui/helper/helper.js');
 var $ = require('home:widget/ui/zepto/zepto.js');
 var Log = require('home:widget/ui/log/log.js');
 var Storage = require('home:widget/ui/localstorage/localstorage.js');
+var CacheView = require('home:widget/ui/router/cache.js');
 
 var App = Backbone.Router.extend({
     routes: {
@@ -35,6 +36,9 @@ var App = Backbone.Router.extend({
     },
     initTab: function(tab) {
         this.mainNav = tab;
+    },
+    initCache:function(cache){
+        this.cache = cache;
     },
     clean: function(options) {
         if (this.currentView) {
@@ -509,9 +513,15 @@ var App = Backbone.Router.extend({
             detail: {}
         });
       });
+    },
+    execute: function(callback, args ,name) {
+        this.cache.routerLoad(callback,args,name,this);
+        //if (callback) callback.apply(this, args);
     }
 });
 
 var app = new App();
+
+app.initCache(new CacheView(app));
 
 module.exports = app;
