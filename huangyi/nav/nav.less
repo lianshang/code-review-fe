@@ -1,0 +1,115 @@
+@nav-color:               #37474F;//#398DEE;
+@nav-height:              30px;
+@nav-row-padding:         5px;
+@nav-cur-color:           @color-orange;//#519AEE;
+@nav-font-size:           14px;
+@nav-item-padding:        0 20px;
+@nav-item-margin:         8px;
+@hover-bottom-height:     4px;
+@limited-width:           100px;
+
+.mod-nav {
+
+  .header-nav {
+    // position: relative;
+    width: calc(~"@{auto-con-width} - @{auto-l-col-width} - 2 * @{outside-col-gap}");
+    background-color: @body-bg;//@nav-color;
+    height: @nav-height;
+    line-height: @nav-height;
+    // font-size: @nav-font-size;
+    padding: @nav-row-padding @outside-col-gap;
+    position: fixed;
+    border-bottom: 1px solid @color-border;
+    top: @header-height;
+    left: @auto-l-col-width;
+    z-index: 102;
+
+    .nav-item {
+      color: @color-dark;
+      height: @nav-height;
+      float: left;
+
+      // 这段代码留着nav list 限宽省略号显示的需求
+      //max-width: @limited-width;
+      //text-overflow: ellipsis;
+      //overflow: hidden;
+      //white-space: nowrap;
+
+      font-size: @nav-font-size;
+      padding: @nav-item-padding;
+      &:hover:not(.current) {
+        color: @main-color;
+      }
+      &.current {
+        background-color: @color-gray;
+        color: darken(@main-color, 20%);
+        // border: @hover-bottom-height solid @color-blue-lighter;
+        position: relative;
+        border-radius: 6px;
+      }
+    }
+
+    .has-more {
+      width: 30px;
+      padding-left: 20px;
+      display: inline-block;
+      cursor: pointer;
+
+      .arrow:after {
+        content: "";
+        display: block;
+        width: @nav-font-size;
+        height: @nav-font-size;
+        box-sizing: border-box;
+        border: (@nav-font-size/2) solid transparent;
+        border-bottom: 10px solid rgba(43, 57, 83, 0.8);
+        position: absolute;
+        top: 30px;
+      }
+    }
+
+    .more-list-wrap {
+      min-width: 250px;
+      margin-top: @nav-font-size - 2;
+      position: absolute;
+      right: @outside-col-gap;
+      border-radius: 5px;
+      background-color: rgba(43, 57, 83, 0.9);
+      .box-shadow(0 0 10px @color-blue-dark);
+      text-align: center;
+
+      a {
+        display: block;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        color: @color-white;
+        cursor: pointer;
+        &:hover,
+        &.current {
+          background-color: darken(@color-blue-dark, 10%);
+        }
+      }
+
+      li {
+        &:first-child a {
+          border-radius: 5px 5px 0 0;
+        }
+        &:last-child a {
+          border-radius: 0 0 5px 5px;
+        }
+        // 只有一个li元素时
+        &:only-child a {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .divider {
+    position: relative;
+    height: @nav-height + @header-height + (@nav-row-padding * 2) - @outside-row-gap;
+    display: block;
+  }
+}
+@element: "layout";
+@import (multiple) '../css-base/theme/theme.config';
+.loadUIOverrides();
